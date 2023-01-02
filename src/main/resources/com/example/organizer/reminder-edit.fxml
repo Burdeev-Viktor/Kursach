@@ -5,10 +5,8 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="530.0" prefWidth="600.0" style="-fx-background-color: #942e2e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.ReminderEditController">
    <children>
@@ -22,57 +20,16 @@
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="79.0" layoutY="248.0" text="Напоминать:" textFill="#ccccbe" AnchorPane.leftAnchor="80.0">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbSetting" layoutX="79.0" layoutY="301.0" text="Как:" textFill="#ccccbe" AnchorPane.leftAnchor="80.0">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbTime" layoutX="79.0" layoutY="350.0" text="Время:" textFill="#ccccbe" AnchorPane.leftAnchor="80.0">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="79.0" layoutY="189.0" text="Дата сдачи:" textFill="#ccccbe" AnchorPane.leftAnchor="80.0">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="lbDayOfWeek" layoutX="79.0" layoutY="392.0" text="День недели:" textFill="#ccccbe" AnchorPane.leftAnchor="80.0">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="twLessonName" layoutX="262.0" layoutY="51.0" AnchorPane.rightAnchor="113.0">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </TextField>
       <TextArea fx:id="taQuest" layoutX="265.0" layoutY="109.0" prefHeight="53.0" prefWidth="225.0" AnchorPane.rightAnchor="113.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="13.0" />
          </font>
       </TextArea>
-      <DatePicker fx:id="dpDate" layoutX="265.0" layoutY="186.0" prefHeight="25.0" prefWidth="225.0" AnchorPane.rightAnchor="113.0" />
-      <ChoiceBox fx:id="cbSwitch" layoutX="265.0" layoutY="244.0" prefHeight="25.0" prefWidth="225.0" AnchorPane.rightAnchor="113.0" />
-      <ChoiceBox fx:id="cbSwitchSetting" layoutX="265.0" layoutY="298.0" prefHeight="25.0" prefWidth="225.0" AnchorPane.rightAnchor="113.0" />
-      <ChoiceBox fx:id="cbDayOfWeek" layoutX="262.0" layoutY="391.0" prefHeight="25.0" prefWidth="225.0" AnchorPane.rightAnchor="113.0" />
       <Button fx:id="butSave" layoutX="269.0" layoutY="444.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: ccccbe;" text="Сохранить" textFill="#ccccbe">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
-      <ChoiceBox fx:id="cbHours" layoutX="262.0" layoutY="349.0" prefHeight="25.0" prefWidth="57.0" />
-      <Label fx:id="ldtime1" layoutX="332.0" layoutY="351.0" text=":" textFill="#ccccbe">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Label>
-      <ChoiceBox fx:id="cbMinuts" layoutX="353.0" layoutY="350.0" prefHeight="25.0" prefWidth="57.0" />
       <Button fx:id="butClose" layoutX="156.0" layoutY="444.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: ccccbe;" text="Отмена" textFill="#ccccbe">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
@@ -83,5 +40,65 @@
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
+      <AnchorPane fx:id="paneStandart" layoutX="82.0" layoutY="178.0" prefHeight="249.0" prefWidth="436.0">
+         <children>
+            <Label layoutX="2.0" layoutY="71.0" text="Напоминать:" textFill="#ccccbe" AnchorPane.leftAnchor="2.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbSetting" layoutX="2.0" layoutY="124.0" text="Как:" textFill="#ccccbe" AnchorPane.leftAnchor="2.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbTime" layoutX="2.0" layoutY="173.0" text="Время:" textFill="#ccccbe" AnchorPane.leftAnchor="2.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="2.0" layoutY="12.0" text="Дата сдачи:" textFill="#ccccbe" AnchorPane.leftAnchor="2.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbDayOfWeek" layoutX="2.0" layoutY="215.0" text="День недели:" textFill="#ccccbe" AnchorPane.leftAnchor="2.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dpDate" layoutX="184.0" layoutY="9.0" prefHeight="25.0" prefWidth="225.0" />
+            <ChoiceBox fx:id="cbSwitch" layoutX="184.0" layoutY="67.0" prefHeight="25.0" prefWidth="225.0" />
+            <ChoiceBox fx:id="cbSwitchSetting" layoutX="184.0" layoutY="121.0" prefHeight="25.0" prefWidth="225.0" />
+            <ChoiceBox fx:id="cbDayOfWeek" layoutX="184.0" layoutY="214.0" prefHeight="25.0" prefWidth="225.0" />
+            <ChoiceBox fx:id="cbHours" layoutX="184.0" layoutY="172.0" prefHeight="25.0" prefWidth="57.0" />
+            <Label fx:id="ldtime1" layoutX="254.0" layoutY="174.0" text=":" textFill="#ccccbe">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="cbMinuts" layoutX="275.0" layoutY="173.0" prefHeight="25.0" prefWidth="57.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneLab" disable="true" layoutX="68.0" layoutY="187.0" prefHeight="154.0" prefWidth="436.0" visible="false">
+         <children>
+            <Label fx:id="lbNeed" layoutX="14.0" layoutY="21.0" text="Всего:" textFill="#ccccbe">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbClose" layoutX="14.0" layoutY="43.0" text="Сдано:" textFill="#ccccbe">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="butLab" layoutX="14.0" layoutY="87.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: ccccbe;" text="Сдать" textFill="#ccccbe">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <ChoiceBox fx:id="cbLessonName" layoutX="262.0" layoutY="58.0" prefHeight="25.0" prefWidth="225.0" />
    </children>
 </AnchorPane>

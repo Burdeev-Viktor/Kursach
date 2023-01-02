@@ -2,12 +2,83 @@ package com.example.organizer.model;
 
 public class Reminder {
     private int id;
+    private int idUser;
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    public Reminder(int id, int idUser, String lessonName, String quest, String date, boolean switchR, String settingSwitch, String time, int needWork, int closeWork, String datOfWeek) {
+        this.id = id;
+        this.idUser = idUser;
+        this.lessonName = lessonName;
+        this.quest = quest;
+        this.date = date;
+        this.switchR = switchR;
+        this.settingSwitch = settingSwitch;
+        this.time = time;
+        this.needWork = needWork;
+        this.closeWork = closeWork;
+        this.datOfWeek = datOfWeek;
+    }
+
     private String lessonName;
     private String quest;
     private String date;
     private boolean switchR;
     private String settingSwitch;
     private String time;
+    private int needWork;
+    private int closeWork;
+
+    public int getNeedWork() {
+        return needWork;
+    }
+
+    public void setNeedWork(int needWork) {
+        this.needWork = needWork;
+    }
+
+    public int getCloseWork() {
+        return closeWork;
+    }
+
+    public void setCloseWork(int closeWork) {
+        this.closeWork = closeWork;
+    }
+
+    public Reminder() {
+    }
+
+    public Reminder(String lessonName, String quest, String date, boolean switchR, String settingSwitch, String time, int needWork, int closeWork, String datOfWeek) {
+        this.lessonName = lessonName;
+        this.quest = quest;
+        this.date = date;
+        this.switchR = switchR;
+        this.settingSwitch = settingSwitch;
+        this.time = time;
+        this.needWork = needWork;
+        this.closeWork = closeWork;
+        this.datOfWeek = datOfWeek;
+    }
+
+    public Reminder(int id, String lessonName, String quest, String date, boolean switchR, String settingSwitch, String time, int needWork, int closeWork, String datOfWeek) {
+        this.id = id;
+        this.lessonName = lessonName;
+        this.quest = quest;
+        this.date = date;
+        this.switchR = switchR;
+        this.settingSwitch = settingSwitch;
+        this.time = time;
+        this.needWork = needWork;
+        this.closeWork = closeWork;
+        this.datOfWeek = datOfWeek;
+    }
+
     private String datOfWeek;
 
     public Reminder(int id, String lessonName, String quest, String date, boolean switchR, String settingSwitch, String time) {

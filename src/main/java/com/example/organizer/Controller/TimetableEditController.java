@@ -1,17 +1,16 @@
 package com.example.organizer.Controller;
 
 
-import com.example.organizer.Const;
-import com.example.organizer.CustomView.LessonSmallView;
-import com.example.organizer.Repositories.LessonRepo;
-import com.example.organizer.model.Lesson;
+import com.example.organizer.CustomView.LessonTimetableSmallView;
+import com.example.organizer.Service.ThisUser;
+import com.example.organizer.Service.TimetableService;
+import com.example.organizer.model.LessonTimetable;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class TimetableEditController implements Initializable {
@@ -49,25 +48,23 @@ public class TimetableEditController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setInfo();
         butAdd.setOnAction(SciencesController::toAddLesson);
-        butToMain.setOnAction(event -> SciencesController.toMain(event, SciencesController.getUser()));
-
+        butToMain.setOnAction(event -> SciencesController.toMain(event, ThisUser.getId()));
     }
-
     public void setInfo() {
         VBox[][] vBoxes = {
                 {vb00, vb01, vb02, vb03, vb04, vb05},
                 {vb10, vb11, vb12, vb13, vb14, vb15}
         };
-        ArrayList<Lesson> lessonList = LessonRepo.getAllLessonsByUser(SciencesController.user.getId());
-        for (Lesson lesson : lessonList) {
-            if (lesson.getNumberOfWeek() < 2) {
-                vBoxes[lesson.getNumberOfWeek()][lesson.getDayOfWeek()].getChildren().add(new LessonSmallView(lesson));
-                vBoxes[lesson.getNumberOfWeek()][lesson.getDayOfWeek()].setSpacing(Const.VBOX_SPACING);
-            } else {
-                vBoxes[0][lesson.getDayOfWeek()].getChildren().add(new LessonSmallView(lesson));
-                vBoxes[0][lesson.getDayOfWeek()].setSpacing(Const.VBOX_SPACING);
-                vBoxes[1][lesson.getDayOfWeek()].getChildren().add(new LessonSmallView(lesson));
-                vBoxes[1][lesson.getDayOfWeek()].setSpacing(Const.VBOX_SPACING);
+        LessonTimetable [][][] lessonTimetables = TimetableService.getSortLessonsTimetableAll();
+        for(int w = 0; w < vBoxes.length; w++){
+            for (int d = 0; d < vBoxes[0].length;d++){
+                if(lessonTimetables[w][d] == null){
+                    continue;
+                }
+                for (int i = 0; i < lessonTimetables[w][d].length; i++){
+                    vBoxes[w][d].getChildren().add(new LessonTimetableSmallView(lessonTimetables[w][d][i]));
+                    vBoxes[w][d].setSpacing(5);
+                }
             }
         }
     }

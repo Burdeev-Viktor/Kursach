@@ -1,45 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<AnchorPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #942e2e;"
-            xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.organizer.Controller.TimetableEditController">
-    <VBox layoutX="240.0" layoutY="25.0" prefHeight="560.0" prefWidth="1000.0" AnchorPane.bottomAnchor="140.0"
-          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #942e2e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.TimetableEditController">
+    <VBox layoutX="240.0" layoutY="25.0" prefHeight="560.0" prefWidth="1000.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
        <HBox prefHeight="280.0" prefWidth="600.0" spacing="5.0" VBox.vgrow="ALWAYS">
           <VBox.margin>
-             <Insets bottom="5.0" right="20.0" top="5.0"/>
+             <Insets bottom="5.0" right="20.0" top="5.0" />
           </VBox.margin>
           <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="150.0" prefWidth="100.0" HBox.hgrow="NEVER">
-             <Label layoutX="40.0" layoutY="50.0" text="I" textFill="#ccccbe" AnchorPane.bottomAnchor="44.0"
-                    AnchorPane.topAnchor="50.0">
+             <Label layoutX="40.0" layoutY="50.0" text="I" textFill="#ccccbe" AnchorPane.bottomAnchor="44.0" AnchorPane.topAnchor="50.0">
                 <font>
-                   <Font name="Bodoni MT" size="48.0"/>
+                   <Font name="Bodoni MT" size="48.0" />
                 </font>
              </Label>
           </AnchorPane>
           <VBox prefHeight="200.0" prefWidth="150.0" HBox.hgrow="ALWAYS">
              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="150.0">
-                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0"
-                       prefWidth="150.0"
-                       style="-fx-border-color: ccccbe;" text="Понедельник" textAlignment="CENTER"
-                       textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: ccccbe;" text="Понедельник" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                    <font>
-                      <Font name="Arial Rounded MT Bold" size="18.0"/>
+                      <Font name="Arial Rounded MT Bold" size="18.0" />
                    </font>
                 </Label>
              </AnchorPane>
-             <VBox fx:id="vb00" prefHeight="230.0" prefWidth="145.0" style="-fx-border-color: ccccbe;"
-                   VBox.vgrow="ALWAYS">
+             <VBox fx:id="vb00" prefHeight="230.0" prefWidth="145.0" style="-fx-border-color: ccccbe;" VBox.vgrow="ALWAYS">
                 <VBox.margin>
-                   <Insets/>
+                   <Insets />
                 </VBox.margin>
                 <padding>
-                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
              </VBox>
 
@@ -47,244 +42,183 @@
           </VBox>
           <VBox prefHeight="200.0" prefWidth="150" HBox.hgrow="ALWAYS">
              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="150.0">
-                <Label alignment="CENTER" layoutY="6.0" style="-fx-border-color: ccccbe;" text="Вторник"
-                       textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0"
-                       AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-                       AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" layoutY="6.0" style="-fx-border-color: ccccbe;" text="Вторник" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                    <font>
-                      <Font name="Arial Rounded MT Bold" size="18.0"/>
+                      <Font name="Arial Rounded MT Bold" size="18.0" />
                    </font>
                 </Label>
              </AnchorPane>
-             <VBox fx:id="vb01" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;"
-                   VBox.vgrow="ALWAYS">
+             <VBox fx:id="vb01" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;" VBox.vgrow="ALWAYS">
                 <padding>
-                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
              </VBox>
           </VBox>
           <VBox prefHeight="200.0" prefWidth="150" HBox.hgrow="ALWAYS">
              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="150.0">
-                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0"
-                       prefWidth="150.0"
-                       style="-fx-border-color: ccccbe;" text="Среда" textAlignment="CENTER"
-                       textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: ccccbe;" text="Среда" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                    <font>
-                      <Font name="Arial Rounded MT Bold" size="18.0"/>
+                      <Font name="Arial Rounded MT Bold" size="18.0" />
                    </font>
                 </Label>
              </AnchorPane>
-             <VBox fx:id="vb02" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;"
-                   VBox.vgrow="ALWAYS">
+             <VBox fx:id="vb02" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;" VBox.vgrow="ALWAYS">
                 <padding>
-                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
              </VBox>
           </VBox>
           <VBox prefHeight="200.0" prefWidth="150" HBox.hgrow="ALWAYS">
              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="150.0">
-                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0"
-                       prefWidth="150.0"
-                       style="-fx-border-color: ccccbe;" text="Четверг" textAlignment="CENTER"
-                       textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: ccccbe;" text="Четверг" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                    <font>
-                      <Font name="Arial Rounded MT Bold" size="18.0"/>
+                      <Font name="Arial Rounded MT Bold" size="18.0" />
                    </font>
                 </Label>
              </AnchorPane>
-             <VBox fx:id="vb03" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;"
-                   VBox.vgrow="ALWAYS">
+             <VBox fx:id="vb03" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;" VBox.vgrow="ALWAYS">
                 <padding>
-                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
              </VBox>
           </VBox>
           <VBox prefHeight="150.0" prefWidth="150" HBox.hgrow="ALWAYS">
              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="150.0">
-                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0"
-                       prefWidth="150.0"
-                       style="-fx-border-color: ccccbe;" text="Пятница" textAlignment="CENTER"
-                       textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: ccccbe;" text="Пятница" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                    <font>
-                      <Font name="Arial Rounded MT Bold" size="18.0"/>
+                      <Font name="Arial Rounded MT Bold" size="18.0" />
                    </font>
                 </Label>
              </AnchorPane>
-             <VBox fx:id="vb04" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;"
-                   VBox.vgrow="ALWAYS">
+             <VBox fx:id="vb04" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;" VBox.vgrow="ALWAYS">
                 <padding>
-                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
              </VBox>
           </VBox>
           <VBox prefHeight="200.0" prefWidth="150" HBox.hgrow="ALWAYS">
              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="150.0">
-                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0"
-                       prefWidth="150.0"
-                       style="-fx-border-color: ccccbe;" text="Суббота" textAlignment="CENTER"
-                       textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: ccccbe;" text="Суббота" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                    <font>
-                      <Font name="Arial Rounded MT Bold" size="18.0"/>
+                      <Font name="Arial Rounded MT Bold" size="18.0" />
                    </font>
                 </Label>
              </AnchorPane>
-             <VBox fx:id="vb05" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;"
-                   VBox.vgrow="ALWAYS">
+             <VBox fx:id="vb05" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;" VBox.vgrow="ALWAYS">
                 <padding>
-                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
              </VBox>
           </VBox>
        </HBox>
        <AnchorPane maxHeight="1.0" prefHeight="1.0" prefWidth="5.0" VBox.vgrow="NEVER">
-          <AnchorPane prefHeight="2.0" prefWidth="0.0" style="-fx-background-color: ccccbe;"
-                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0"
-                      AnchorPane.topAnchor="0.0"/>
+          <AnchorPane prefHeight="2.0" prefWidth="0.0" style="-fx-background-color: ccccbe;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0" />
        </AnchorPane>
-       <HBox maxWidth="1.7976931348623157E308" prefHeight="280.0" prefWidth="1000.0" spacing="5.0"
-             VBox.vgrow="ALWAYS">
+       <HBox maxWidth="1.7976931348623157E308" prefHeight="280.0" prefWidth="1000.0" spacing="5.0" VBox.vgrow="ALWAYS">
           <VBox.margin>
-             <Insets bottom="5.0" right="20.0" top="5.0"/>
+             <Insets bottom="5.0" right="20.0" top="5.0" />
           </VBox.margin>
           <AnchorPane prefHeight="150.0" prefWidth="100.0" HBox.hgrow="NEVER">
-             <Label layoutX="35.0" layoutY="50.0" text="II" textFill="#ccccbe" AnchorPane.bottomAnchor="44.0"
-                    AnchorPane.topAnchor="50.0">
+             <Label layoutX="35.0" layoutY="50.0" text="II" textFill="#ccccbe" AnchorPane.bottomAnchor="44.0" AnchorPane.topAnchor="50.0">
                 <font>
-                   <Font name="Bodoni MT" size="48.0"/>
+                   <Font name="Bodoni MT" size="48.0" />
                 </font>
              </Label>
           </AnchorPane>
           <VBox prefHeight="200.0" prefWidth="150.0" HBox.hgrow="ALWAYS">
              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="150.0">
-                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0"
-                       prefWidth="150.0"
-                       style="-fx-border-color: ccccbe;" text="Понедельник" textAlignment="CENTER"
-                       textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: ccccbe;" text="Понедельник" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                    <font>
-                      <Font name="Arial Rounded MT Bold" size="18.0"/>
+                      <Font name="Arial Rounded MT Bold" size="18.0" />
                    </font>
                 </Label>
              </AnchorPane>
-             <VBox fx:id="vb10" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;"
-                   VBox.vgrow="ALWAYS">
+             <VBox fx:id="vb10" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;" VBox.vgrow="ALWAYS">
                 <padding>
-                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
              </VBox>
           </VBox>
           <VBox prefHeight="200.0" prefWidth="150" HBox.hgrow="ALWAYS">
              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="150.0">
-                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0"
-                       prefWidth="150.0"
-                       style="-fx-border-color: ccccbe;" text="Вторник" textAlignment="CENTER"
-                       textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: ccccbe;" text="Вторник" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                    <font>
-                      <Font name="Arial Rounded MT Bold" size="18.0"/>
+                      <Font name="Arial Rounded MT Bold" size="18.0" />
                    </font>
                 </Label>
              </AnchorPane>
-             <VBox fx:id="vb11" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;"
-                   VBox.vgrow="ALWAYS">
+             <VBox fx:id="vb11" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;" VBox.vgrow="ALWAYS">
                 <padding>
-                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
              </VBox>
           </VBox>
           <VBox prefHeight="200.0" prefWidth="150" HBox.hgrow="ALWAYS">
              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="150.0">
-                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0"
-                       prefWidth="150.0"
-                       style="-fx-border-color: ccccbe;" text="Среда" textAlignment="CENTER"
-                       textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: ccccbe;" text="Среда" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                    <font>
-                      <Font name="Arial Rounded MT Bold" size="18.0"/>
+                      <Font name="Arial Rounded MT Bold" size="18.0" />
                    </font>
                 </Label>
              </AnchorPane>
-             <VBox fx:id="vb12" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;"
-                   VBox.vgrow="ALWAYS">
+             <VBox fx:id="vb12" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;" VBox.vgrow="ALWAYS">
                 <padding>
-                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
              </VBox>
           </VBox>
           <VBox prefHeight="200.0" prefWidth="150" HBox.hgrow="ALWAYS">
              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="150.0">
-                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0"
-                       prefWidth="150.0"
-                       style="-fx-border-color: ccccbe;" text="Четверг" textAlignment="CENTER"
-                       textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: ccccbe;" text="Четверг" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                    <font>
-                      <Font name="Arial Rounded MT Bold" size="18.0"/>
+                      <Font name="Arial Rounded MT Bold" size="18.0" />
                    </font>
                 </Label>
              </AnchorPane>
-             <VBox fx:id="vb13" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;"
-                   VBox.vgrow="ALWAYS">
+             <VBox fx:id="vb13" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;" VBox.vgrow="ALWAYS">
                 <padding>
-                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
              </VBox>
           </VBox>
           <VBox prefHeight="150.0" prefWidth="150" HBox.hgrow="ALWAYS">
              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="150.0">
-                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0"
-                       prefWidth="150.0"
-                       style="-fx-border-color: ccccbe;" text="Пятница" textAlignment="CENTER"
-                       textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: ccccbe;" text="Пятница" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                    <font>
-                      <Font name="Arial Rounded MT Bold" size="18.0"/>
+                      <Font name="Arial Rounded MT Bold" size="18.0" />
                    </font>
                 </Label>
              </AnchorPane>
-             <VBox fx:id="vb14" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;"
-                   VBox.vgrow="ALWAYS">
+             <VBox fx:id="vb14" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;" VBox.vgrow="ALWAYS">
                 <padding>
-                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
              </VBox>
           </VBox>
           <VBox prefHeight="200.0" prefWidth="150" HBox.hgrow="ALWAYS">
              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="150.0">
-                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0"
-                       prefWidth="150.0"
-                       style="-fx-border-color: ccccbe;" text="Суббота" textAlignment="CENTER"
-                       textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label alignment="CENTER" layoutX="55.0" layoutY="6.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-color: ccccbe;" text="Суббота" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                    <font>
-                      <Font name="Arial Rounded MT Bold" size="18.0"/>
+                      <Font name="Arial Rounded MT Bold" size="18.0" />
                    </font>
                 </Label>
              </AnchorPane>
-             <VBox fx:id="vb15" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;"
-                   VBox.vgrow="ALWAYS">
+             <VBox fx:id="vb15" prefHeight="231.0" prefWidth="145.0" style="-fx-border-color: ccccbe;" VBox.vgrow="ALWAYS">
                 <padding>
-                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                 </padding>
              </VBox>
           </VBox>
        </HBox>
     </VBox>
-    <Button fx:id="butAdd" layoutX="895.0" layoutY="603.0" mnemonicParsing="false" text="+" textAlignment="CENTER"
-            AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0">
+    <Button fx:id="butAdd" layoutX="895.0" layoutY="603.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: ccccbe;" text="+" textAlignment="CENTER" textFill="#ccccbe" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0">
         <font>
-            <Font name="Arial Rounded MT Bold" size="24.0"/>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
         </font>
     </Button>
-    <Button fx:id="butToMain" layoutX="763.0" layoutY="606.0" mnemonicParsing="false" prefHeight="44.0"
-            prefWidth="110.0"
-            text="Дальше" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="130.0">
+    <Button fx:id="butToMain" layoutX="763.0" layoutY="606.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="110.0" style="-fx-background-color: transparent; -fx-border-color: ccccbe;" text="Дальше" textFill="#ccccbe" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="130.0">
         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0"/>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </Button>
 </AnchorPane>

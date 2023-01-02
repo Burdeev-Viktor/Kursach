@@ -8,7 +8,7 @@ import java.sql.SQLException;
 abstract class db_Settings {
     protected static String dbURL = "jdbc:mysql://127.0.0.1:3306/organizer_db";
     protected static String dbUSER = "root";
-    protected static String dbPASSWORD = "VIKtor654456";
+    protected static String dbPASSWORD = "1234";
 
     static protected void closeConnection(ResultSet resultSet, PreparedStatement preparedStatement, Connection connection) {
         if (resultSet != null) {

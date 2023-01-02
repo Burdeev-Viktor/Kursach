@@ -2,39 +2,27 @@ package com.example.organizer.model;
 
 public class Lesson {
     private int id;
-    private String name;
-    private String teacher;
-    private String room;
-    private String type;
-    private int dayOfWeek;
-    private int numberOfWeek;
+    private int idUser;
 
-    public Lesson(String name, String teacher, String room, String type, int dayOfWeek, int numberOfWeek) {
-        this.name = name;
-        this.teacher = teacher;
-        this.room = room;
-        this.type = type;
-        this.dayOfWeek = dayOfWeek;
-        this.numberOfWeek = numberOfWeek;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public Lesson(int id, String name, String teacher, String room, String type, int dayOfWeek, int numberOfWeek) {
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    public Lesson(int id, int idUser, String name, String typeOfTest, String condition) {
         this.id = id;
+        this.idUser = idUser;
         this.name = name;
-        this.teacher = teacher;
-        this.room = room;
-        this.type = type;
-        this.dayOfWeek = dayOfWeek;
-        this.numberOfWeek = numberOfWeek;
+        this.typeOfTest = typeOfTest;
+        this.condition = condition;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
+    private String name;
+    private String typeOfTest;
+    private String condition;
 
     public int getId() {
         return id;
@@ -48,35 +36,32 @@ public class Lesson {
         this.name = name;
     }
 
-    public String getTeacher() {
-        return teacher;
+    public String getTypeOfTest() {
+        return typeOfTest;
     }
 
-    public void setTeacher(String teacher) {
-        this.teacher = teacher;
+    public void setTypeOfTest(String typeOfTest) {
+        this.typeOfTest = typeOfTest;
     }
 
-    public String getRoom() {
-        return room;
+    public String getCondition() {
+        return condition;
     }
 
-    public void setRoom(String room) {
-        this.room = room;
+    public void setCondition(String condition) {
+        this.condition = condition;
     }
 
-    public int getDayOfWeek() {
-        return dayOfWeek;
+    public Lesson(String name, String typeOfTest, String condition) {
+        this.name = name;
+        this.typeOfTest = typeOfTest;
+        this.condition = condition;
     }
 
-    public void setDayOfWeek(int dayOfWeek) {
-        this.dayOfWeek = dayOfWeek;
-    }
-
-    public int getNumberOfWeek() {
-        return numberOfWeek;
-    }
-
-    public void setNumberOfWeek(int numberOfWeek) {
-        this.numberOfWeek = numberOfWeek;
+    public Lesson(int id, String name, String typeOfTest, String condition) {
+        this.id = id;
+        this.name = name;
+        this.typeOfTest = typeOfTest;
+        this.condition = condition;
     }
 }

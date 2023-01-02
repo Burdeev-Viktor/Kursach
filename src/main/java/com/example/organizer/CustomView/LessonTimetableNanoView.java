@@ -1,9 +1,7 @@
 package com.example.organizer.CustomView;
 
-
-import com.example.organizer.Controller.SciencesController;
 import com.example.organizer.Main;
-import com.example.organizer.model.Lesson;
+import com.example.organizer.model.LessonTimetable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -11,17 +9,16 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class LessonSmallView extends AnchorPane {
+public class LessonTimetableNanoView extends AnchorPane {
     @FXML
     private Label lbName;
     @FXML
-    private Label lbRoom;
+    private Label lbTime;
     @FXML
     private AnchorPane pane;
 
-    public LessonSmallView(Lesson lesson) {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(
-                "lesson-small.fxml"));
+    public LessonTimetableNanoView(LessonTimetable lessonTimetable) {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("lesson-timetable-nano.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -30,16 +27,16 @@ public class LessonSmallView extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-        pane.setOnMouseClicked(mouseEvent -> SciencesController.toEditLesson(lesson));
-        this.lbName.setText(lesson.getName());
-        this.lbRoom.setText(lesson.getRoom());
-        switch (lesson.getType()) {
-            case "Лекция" -> this.pane.setStyle("-fx-background-color: #c94c4c");
+        pane.setOnMouseClicked(mouseEvent -> {
+
+        });
+        this.lbTime.setText(lessonTimetable.getTime());
+        this.lbName.setText(lessonTimetable.getName());
+        switch (lessonTimetable.getType()) {
+            case "Лекция" -> this.pane.setStyle("-fx-background-color: #87b93c");
             case "Лабораторная" -> this.pane.setStyle("-fx-background-color: #c9ac4cff");
             case "Практика" -> this.pane.setStyle("-fx-background-color: #674cc9");
             case "Консультация" -> this.pane.setStyle("-fx-background-color: #4cc5c9ff");
         }
     }
-
 }
-

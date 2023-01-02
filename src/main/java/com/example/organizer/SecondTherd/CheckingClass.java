@@ -12,29 +12,23 @@ import java.util.Objects;
 public class CheckingClass extends Thread {
     private static CheckingClass checkingClass;
     private volatile boolean running;
-
-
     private CheckingClass() {
         running = true;
     }
-
     public static void running() {
         checkingClass.start();
     }
-
-
     public static CheckingClass getCheckingClass() {
         if (checkingClass == null) {
             checkingClass = new CheckingClass();
         }
         return checkingClass;
     }
-
     public void run() {
         running = true;
         while (running) {
             long timeSleep = Const.HOUR_IN_MILLISECONDS;
-            ArrayList<Reminder> reminderArrayList = ReminderRepo.getRemindersEnable(SciencesController.getUser());
+            ArrayList<Reminder> reminderArrayList = ReminderRepo.getRemindersEnable();
             String today = ReminderService.getTodayDayOfWeek();
             for (int i = 0; i < reminderArrayList.size(); i++) {
                 if (!(Objects.equals(reminderArrayList.get(i).getDatOfWeek(), today) || Objects.equals(reminderArrayList.get(i).getSettingSwitch(), "Каждый день"))) {
@@ -62,11 +56,9 @@ public class CheckingClass extends Thread {
             }
         }
     }
-
     public boolean isRunning() {
         return running;
     }
-
     public void setRunning(boolean running) {
         this.running = running;
     }

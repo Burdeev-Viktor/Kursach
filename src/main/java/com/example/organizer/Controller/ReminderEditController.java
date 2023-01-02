@@ -1,12 +1,15 @@
 package com.example.organizer.Controller;
 
 import com.example.organizer.Const;
+import com.example.organizer.Repositories.LessonRepo;
 import com.example.organizer.Repositories.ReminderRepo;
 import com.example.organizer.Service.ReminderService;
+import com.example.organizer.Service.ThisUser;
 import com.example.organizer.model.Reminder;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -20,11 +23,13 @@ public class ReminderEditController implements Initializable {
     @FXML
     private Button butSave;
     @FXML
+    private Button butLab;
+    @FXML
     private Button butClose;
     @FXML
     private Button butDel;
     @FXML
-    private TextField twLessonName;
+    private ChoiceBox<String> cbLessonName;
     @FXML
     private TextArea taQuest;
     @FXML
@@ -43,6 +48,14 @@ public class ReminderEditController implements Initializable {
     private Label lbSetting;
     @FXML
     private Label lbTime;
+    @FXML
+    private Label lbClose;
+    @FXML
+    private Label lbNeed;
+    @FXML
+    private AnchorPane paneStandart;
+    @FXML
+    private AnchorPane paneLab;
     @FXML
     private Label ldtime1;
     @FXML
@@ -65,8 +78,8 @@ public class ReminderEditController implements Initializable {
         }
     }
 
-    static void setDataOfcb(TextField twLessonName, TextArea taQuest, ChoiceBox<String> cbSwitch, ChoiceBox<String> cbSwitchSetting, ChoiceBox<String> cbHours, ChoiceBox<String> cbMinuts, ChoiceBox<String> cbDayOfWeek) {
-        twLessonName.setText("");
+    static void setDataOfcb(ChoiceBox<String> cbLessonName, TextArea taQuest, ChoiceBox<String> cbSwitch, ChoiceBox<String> cbSwitchSetting, ChoiceBox<String> cbHours, ChoiceBox<String> cbMinuts, ChoiceBox<String> cbDayOfWeek) {
+        cbLessonName.getItems().setAll(LessonRepo.getAllLessonsNameByUserId(ThisUser.getId()));
         taQuest.setText("");
         String[] arrayItemsOfCb = {Const.CHOICE_BOX_YES, Const.CHOICE_BOX_NO};
         cbSwitch.getItems().addAll(arrayItemsOfCb);
@@ -142,7 +155,8 @@ public class ReminderEditController implements Initializable {
         });
         butClose.setOnAction(SciencesController::closeThis);
         butDel.setOnAction(event -> {
-            ReminderRepo.deleteReminderById(SciencesController.getUser(), reminder);
+            reminder.setIdUser(ThisUser.getId());
+            ReminderRepo.deleteReminderById( reminder);
             SciencesController.updateMainByStage(ReminderEditController.mainStage);
             butClose.fire();
         });
@@ -154,11 +168,21 @@ public class ReminderEditController implements Initializable {
     }
 
     private boolean formationReminder() {
-        if (Objects.equals(twLessonName.getText(), "")) {
+        if (Objects.equals(cbLessonName.getValue(), "")) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(Const.MESSAGE_ERROR_NOT_LESSON_NAME);
             alert.show();
             return false;
+        }
+        if(paneStandart.isDisable()){
+            Reminder reminderUp = new Reminder();
+            reminderUp.setQuest(taQuest.getText());
+            reminderUp.setLessonName(cbLessonName.getValue());
+            reminderUp.setNeedWork(reminder.getNeedWork());
+            reminderUp.setCloseWork(reminder.getCloseWork());
+            ReminderRepo.updateRminderById(reminderUp, reminder.getId());
+            SciencesController.updateMainByStage(ReminderEditController.mainStage);
+            return true;
         }
         LocalDate localDate = dpDate.getValue();
         System.out.println(localDate);
@@ -176,16 +200,16 @@ public class ReminderEditController implements Initializable {
         }
         Reminder reminder;
         if (Objects.equals(cbSwitch.getValue(), Const.CHOICE_BOX_NO)) {
-            reminder = new Reminder(twLessonName.getText(), taQuest.getText(), localDate.toString(), false);
+            reminder = new Reminder(cbLessonName.getValue(), taQuest.getText(), localDate.toString(), false);
         } else if (Objects.equals(cbSwitchSetting.getValue(), Const.CHOICE_BOX_NUMBER_OF_WEEK[2])) {
-            reminder = new Reminder(twLessonName.getText(), taQuest.getText(), localDate.toString(), true, cbSwitchSetting.getValue(), cbHours.getValue() + Const.COLON + cbMinuts.getValue(), cbDayOfWeek.getValue());
+            reminder = new Reminder(cbLessonName.getValue(), taQuest.getText(), localDate.toString(), true, cbSwitchSetting.getValue(), cbHours.getValue() + Const.COLON + cbMinuts.getValue(), cbDayOfWeek.getValue());
         } else {
-            reminder = new Reminder(twLessonName.getText(), taQuest.getText(), localDate.toString(), true, cbSwitchSetting.getValue(), cbHours.getValue() + Const.COLON + cbMinuts.getValue(), null);
+            reminder = new Reminder(cbLessonName.getValue(), taQuest.getText(), localDate.toString(), true, cbSwitchSetting.getValue(), cbHours.getValue() + Const.COLON + cbMinuts.getValue(), null);
         }
-        if (ReminderRepo.reminderTableIsExistsByUser(SciencesController.getUser())) {
-            ReminderRepo.createReminderTableByUser(SciencesController.getUser());
+        if (ReminderRepo.reminderTableIsExists()) {
+            ReminderRepo.createReminderTable();
         }
-        ReminderRepo.updateRminderById(reminder, this.reminder.getId(), SciencesController.getUser().getId());
+        ReminderRepo.updateRminderById(reminder, this.reminder.getId());
         SciencesController.updateMainByStage(ReminderEditController.mainStage);
         return true;
     }
@@ -193,11 +217,34 @@ public class ReminderEditController implements Initializable {
     private void disOrEnable() {
         disOrEnable(cbSwitch, lbSetting, lbDayOfWeek, ldtime1, lbTime, cbSwitchSetting, cbHours, cbMinuts, cbDayOfWeek);
     }
-
+    private void setLab(){
+        paneStandart.setVisible(false);
+        paneStandart.setDisable(true);
+        paneLab.setVisible(true);
+        paneLab.setDisable(false);
+        lbNeed.setText("Всего: " + reminder.getNeedWork());
+        lbClose.setText("Сдано: " + reminder.getCloseWork());
+        butLab.setOnAction(event -> {
+            if(reminder.getNeedWork() == reminder.getCloseWork()){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText("Все работы сданы");
+                alert.show();
+                return;
+            }
+            reminder.setCloseWork(reminder.getCloseWork() + 1);
+            lbClose.setText("Сдано: " + reminder.getCloseWork());
+        });
+    }
     public void setInfo(Reminder reminder) {
         setDataOfNewReminder();
         this.reminder = reminder;
-        twLessonName.setText(reminder.getLessonName());
+        cbLessonName.setValue(reminder.getLessonName());
+        taQuest.setText(reminder.getQuest());
+        if(reminder.getDate() == null){
+            setLab();
+            return;
+        }
+
         dpDate.setValue(ReminderService.getLocalDateByString(reminder.getDate()));
         taQuest.setText(reminder.getQuest());
         if (reminder.isSwitchR()) {
@@ -220,6 +267,6 @@ public class ReminderEditController implements Initializable {
     }
 
     private void setDataOfNewReminder() {
-        setDataOfcb(twLessonName, taQuest, cbSwitch, cbSwitchSetting, cbHours, cbMinuts, cbDayOfWeek);
+        setDataOfcb(cbLessonName, taQuest, cbSwitch, cbSwitchSetting, cbHours, cbMinuts, cbDayOfWeek);
     }
 }

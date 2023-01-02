@@ -3,6 +3,7 @@ package com.example.organizer.Controller;
 import com.example.organizer.Const;
 import com.example.organizer.Repositories.UserRepo;
 import com.example.organizer.SecondTherd.SystemTrayClass;
+import com.example.organizer.Service.ThisUser;
 import com.example.organizer.model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -41,9 +42,9 @@ public class SignInController implements Initializable {
                 return;
             }
             User user = UserRepo.getUserByLogin(twLogin.getText());
-            SciencesController.setUser(user);
+            new ThisUser(user);
             SystemTrayClass.start();
-            SciencesController.toMain(event, user);
+            SciencesController.toMain(event, ThisUser.getId());
         });
 
     }

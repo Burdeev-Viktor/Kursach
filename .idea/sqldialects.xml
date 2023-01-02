@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/79b82bbd-a892-4055-af39-72ea68afd97f/console.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/organizer/Repositories/LessonRepo.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/example/organizer/Repositories/LessonTimetableRepo.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/example/organizer/Repositories/UserRepo.java" dialect="GenericSQL" />
   </component>
 </project>
