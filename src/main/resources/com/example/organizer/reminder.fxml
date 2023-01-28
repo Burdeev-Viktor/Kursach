@@ -12,7 +12,7 @@
         <Cursor fx:constant="DEFAULT" />
     </cursor>
     <AnchorPane fx:id="pane" maxWidth="1.7976931348623157E308" prefHeight="46.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <Label fx:id="lbDate" prefHeight="25.0" prefWidth="145.0" text="12-10-2002" textFill="#e0d5d5" textOverrun="CLIP" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Label fx:id="lbDate" prefHeight="25.0" prefWidth="145.0" text="12-10-2002"  textOverrun="CLIP" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <font>
                 <Font name="Arial Rounded MT Bold" size="12.0" />
             </font>
@@ -20,7 +20,7 @@
                 <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
             </padding>
         </Label>
-        <Label fx:id="lbName" prefHeight="25.0" prefWidth="176.0" text="Методы Машинного обучения" textFill="#e0d5d5" textOverrun="CENTER_ELLIPSIS" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="0.0">
+        <Label fx:id="lbName" prefHeight="25.0" prefWidth="176.0" text="Методы Машинного обучения" textOverrun="CENTER_ELLIPSIS" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="0.0">
             <font>
                 <Font name="Arial Rounded MT Bold" size="14.0" />
             </font>

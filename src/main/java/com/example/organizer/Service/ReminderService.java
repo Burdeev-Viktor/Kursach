@@ -8,7 +8,16 @@ import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Класс сервис для напоминания
+ */
+
 public class ReminderService {
+    /**
+     * Метод перевода даты из String в тип LocalDate
+     * @param date - String
+     * @return - LocalDate
+     */
     public static LocalDate getLocalDateByString(String date) {
         String year = date.substring(0, 4);
         String mouth = date.substring(5, 7);
@@ -16,21 +25,39 @@ public class ReminderService {
         return LocalDate.of(Integer.parseInt(year), Integer.parseInt(mouth), Integer.parseInt(day));
     }
 
+    /**
+     * Полечение часов из стороки времени
+     * @param time
+     * @return
+     */
     public static String getHours(String time) {
         return time.substring(0, 2);
     }
-
+    /**
+     * Полечение минут из стороки времени
+     * @param time
+     * @return
+     */
     public static String getMinutes(String time) {
         return time.substring(3);
     }
 
-    public static String getCurrentTime() {
+    /**
+     * Метод получения текущего времени
+     * @return - время
+     */
+    private static String getCurrentTime() {
         Calendar c = Calendar.getInstance();
         int hours = c.get(Calendar.HOUR_OF_DAY);
         int minutes = c.get(Calendar.MINUTE);
         return hours + Const.COLON + minutes;
     }
 
+    /**
+     * Разница между текущим временем и заданым в милисикундах
+     * @param dateStart - заданное время
+     * @return - милисикунды
+     */
     public static long getMilSeconds(String dateStart) {
         SimpleDateFormat format = new SimpleDateFormat(Const.TINE_FORMAT);
         String dateStop = ReminderService.getCurrentTime();
@@ -48,6 +75,10 @@ public class ReminderService {
         return d1.getTime() - d2.getTime();
     }
 
+    /**
+     * Соответствие между днями недель
+     * @return
+     */
     public static String getTodayDayOfWeek() {
         final Calendar c = Calendar.getInstance();
         String result = null;

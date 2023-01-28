@@ -1,70 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="516.0" prefWidth="600.0" style="-fx-background-color: #942e2e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.LessonEditController">
-    <Label layoutX="111.0" layoutY="52.0" text="Название:" textFill="#ccccbe" AnchorPane.leftAnchor="111.0">
+<AnchorPane prefHeight="516.0" prefWidth="600.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.Lesson.LessonEditController">
+    <Label layoutX="111.0" layoutY="52.0" styleClass="label_color" text="Название:"  AnchorPane.leftAnchor="111.0">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </Label>
-    <Label layoutX="111.0" layoutY="148.0" text="Тип пары:" textFill="#ccccbe" AnchorPane.leftAnchor="111.0">
+    <Label layoutX="111.0" layoutY="148.0" styleClass="label_color" text="Тип пары:" AnchorPane.leftAnchor="111.0">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </Label>
-    <Label layoutX="111.0" layoutY="198.0" text="Аудитория:" textFill="#ccccbe" AnchorPane.leftAnchor="111.0">
+    <Label layoutX="111.0" layoutY="198.0" styleClass="label_color" text="Аудитория:"  AnchorPane.leftAnchor="111.0">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </Label>
-    <Label layoutX="108.0" layoutY="345.0" text="Номер недели:" textFill="#ccccbe" AnchorPane.leftAnchor="108.0">
+    <Label layoutX="108.0" layoutY="345.0" styleClass="label_color" text="Номер недели:"  AnchorPane.leftAnchor="108.0">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </Label>
-    <Label layoutX="108.0" layoutY="391.0" text="День недели:" textFill="#ccccbe" AnchorPane.leftAnchor="108.0">
+    <Label layoutX="108.0" layoutY="391.0" styleClass="label_color" text="День недели:"  AnchorPane.leftAnchor="108.0">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </Label>
-    <TextField fx:id="twRoom" layoutX="268.0" layoutY="192.0" AnchorPane.rightAnchor="109.0">
+    <TextField fx:id="twRoom" layoutX="268.0" layoutY="192.0" styleClass="textField_big" AnchorPane.rightAnchor="109.0">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </TextField>
-    <ChoiceBox fx:id="cbNumberOfWeek" layoutX="263.0" layoutY="339.0" prefHeight="34.0" prefWidth="225.0" AnchorPane.rightAnchor="112.0" />
-    <ChoiceBox fx:id="cbDayOfWeek" layoutX="263.0" layoutY="385.0" prefHeight="34.0" prefWidth="225.0" AnchorPane.rightAnchor="112.0" />
-    <Button fx:id="butClose" layoutX="155.0" layoutY="468.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: transparent; -fx-border-color: ccccbe;" text="Отмена" textFill="#ccccbe">
+    <ChoiceBox fx:id="cbNumberOfWeek" layoutX="263.0" layoutY="339.0" prefHeight="34.0" prefWidth="225.0" styleClass="choice-box-my" AnchorPane.rightAnchor="112.0" />
+    <ChoiceBox fx:id="cbDayOfWeek" layoutX="263.0" layoutY="385.0" prefHeight="34.0" prefWidth="225.0" styleClass="choice-box-my" AnchorPane.rightAnchor="112.0" />
+    <Button fx:id="butClose" layoutX="155.0" layoutY="468.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="123.0" styleClass="button_general" text="Отмена" >
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </Button>
-    <Button fx:id="butSave" layoutX="318.0" layoutY="468.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: transparent; -fx-border-color: ccccbe;" text="Сохранить" textFill="#ccccbe">
+    <Button fx:id="butSave" layoutX="318.0" layoutY="468.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="123.0" styleClass="button_general" text="Сохранить" >
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </Button>
-    <Label layoutX="110.0" layoutY="104.0" text="Преподаватель:" textFill="#ccccbe">
+    <Label layoutX="110.0" layoutY="104.0" styleClass="label_color" text="Преподаватель:">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </Label>
-    <TextField fx:id="twTeacher" layoutX="267.0" layoutY="98.0">
+    <TextField fx:id="twTeacher" layoutX="267.0" layoutY="98.0" styleClass="textField_big">
         <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
         </font>
     </TextField>
-    <ChoiceBox fx:id="cbType" layoutX="268.0" layoutY="142.0" prefHeight="34.0" prefWidth="225.0" />
-   <Button fx:id="butDel" layoutX="458.0" layoutY="468.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" style="-fx-background-color: transparent; -fx-border-color: ccccbe;" text="-">
+    <ChoiceBox fx:id="cbType" layoutX="268.0" layoutY="142.0" prefHeight="34.0" prefWidth="225.0" styleClass="choice-box-my" />
+   <Button fx:id="butDel" layoutX="458.0" layoutY="468.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="34.0" styleClass="button_general" text="-">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
@@ -85,17 +80,17 @@
          </LinearGradient>
       </textFill>
    </Button>
-   <ChoiceBox fx:id="cbName" layoutX="266.0" layoutY="46.0" prefHeight="34.0" prefWidth="225.0" />
-   <Label layoutX="108.0" layoutY="245.0" text="Смена:" textFill="#ccccbe">
+   <ChoiceBox fx:id="cbName" layoutX="266.0" layoutY="46.0" prefHeight="34.0" prefWidth="225.0" styleClass="choice-box-my" />
+   <Label layoutX="108.0" layoutY="245.0" styleClass="label_color" text="Смена:">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </Label>
-   <ChoiceBox fx:id="cbShift" layoutX="267.0" layoutY="239.0" prefHeight="34.0" prefWidth="225.0" />
-   <Label layoutX="108.0" layoutY="292.0" text="Время:" textFill="#ccccbe">
+   <ChoiceBox fx:id="cbShift" layoutX="267.0" layoutY="239.0" prefHeight="34.0" prefWidth="225.0" styleClass="choice-box-my" />
+   <Label layoutX="108.0" layoutY="292.0" styleClass="label_color" text="Время:">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </Label>
-   <ChoiceBox fx:id="cbTime" layoutX="265.0" layoutY="286.0" prefHeight="34.0" prefWidth="225.0" />
+   <ChoiceBox fx:id="cbTime" layoutX="265.0" layoutY="286.0" prefHeight="34.0" prefWidth="225.0" styleClass="choice-box-my" />
 </AnchorPane>

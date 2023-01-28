@@ -1,0 +1,7 @@
+.button{
+    background-color: red;
+
+}
+.button:hover{transition: 2s;
+    background-color: pink;
+}

@@ -1,6 +1,7 @@
-package com.example.organizer.Controller;
+package com.example.organizer.Controller.Lesson;
 
 import com.example.organizer.Const;
+import com.example.organizer.Controller.SciencesController;
 import com.example.organizer.CustomView.LessonView;
 import com.example.organizer.Repositories.LessonRepo;
 import com.example.organizer.Repositories.ReminderRepo;

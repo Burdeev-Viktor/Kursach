@@ -1,6 +1,7 @@
-package com.example.organizer.Controller;
+package com.example.organizer.Controller.Lesson;
 
 import com.example.organizer.Const;
+import com.example.organizer.Controller.SciencesController;
 import com.example.organizer.Repositories.LessonRepo;
 import com.example.organizer.Repositories.LessonTimetableRepo;
 import com.example.organizer.Service.ThisUser;

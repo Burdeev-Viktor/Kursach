@@ -1,0 +1,128 @@
+* {
+    -fx-focus-color: transparent;
+    -fx-general-color: #3f4441;
+    -fx-second-color:#ffdecf;
+    -fx-third-color: #5e6f64;
+}
+.body{
+    -fx-background-color:  -fx-general-color;
+}
+.button_general{
+    -fx-background-color:   transparent;
+    -fx-border-color:  -fx-second-color;
+    -fx-text-fill: -fx-second-color ;
+    -fx-font-family: Arial Rounded MT Bold;
+    -fx-font-size: 14px;
+
+
+}
+.button_general:hover{
+    -fx-border-radius: 5px;
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+    -fx-font-family: Arial Rounded MT ;
+    -fx-font-style: Bold;
+    -fx-font-size: 14px;
+    -fx-background-color:   -fx-second-color;
+    -fx-text-fill: -fx-general-color ;
+}
+.button_link{
+    -fx-background-color:   transparent;
+    -fx-text-fill: #2e2583;
+    -fx-underline: true;
+    -fx-font-family: Arial Rounded MT Bold;
+    -fx-font-size: 12px;
+}
+.button_link:hover{
+    -fx-text-fill: #3e3488;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+.textField_big{
+    -fx-font-family: Arial Rounded MT Bold;
+    -fx-font-size: 18px ;
+    -fx-font-weight: bold;
+    -fx-background-color: transparent ;
+    -fx-text-fill: -fx-second-color ;
+    -fx-border-color: transparent transparent -fx-second-color transparent;
+    -fx-pref-height: 30px;
+}
+.textField_big:hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+.textField_big:focused{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+.text-area-big{
+    -fx-text-fill: -fx-second-color ;
+    -fx-font-family: Arial Rounded MT Bold;
+    -fx-background-color: -fx-third-color;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.text-area-big:hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+.text-area-big .content{
+    -fx-background-color: -fx-third-color;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.choice-box-my {
+    -fx-background-color: -fx-third-color;
+    -fx-mark-color: -fx-second-color;
+    -fx-pref-height: 25;
+}
+
+.choice-box-my > .label {
+    -fx-text-fill: -fx-second-color;
+}
+.choice-box .context-menu { -fx-background-color: -fx-third-color; }
+.choice-box .menu-item:focused { -fx-background-color: -fx-second-color; }
+.choice-box .menu-item > .label {
+    -fx-text-fill: -fx-second-color;
+    -fx-font-size: 12px ;
+    -fx-font-family: Arial Rounded MT Bold;
+}
+.choice-box .menu-item:focused > .label { -fx-text-fill: -fx-third-color; }
+
+
+.label_color{
+    -fx-text-fill: -fx-second-color ;
+    -fx-font-family: Arial Rounded MT Bold;
+}
+.label_big{
+    -fx-font-size: 18px ;
+}
+.label_small{
+    -fx-font-size: 12px ;
+}
+.check-box-my {
+    -fx-font-size: 12px;
+    -fx-text-fill: -fx-second-color ;
+    -fx-font-family: Arial Rounded MT Bold;
+}
+.check-box-my.box {
+     -fx-background-color: -fx-third-color;
+     -fx-border-radius: 0;}
+
+.check-box-my:selected .mark {
+    -fx-background-color: -fx-second-color;
+}
+.check-box-my:selected .box {
+    -fx-background-color: -fx-third-color;
+}
+.div-day-of-week{
+    -fx-border-color:  transparent transparent -fx-second-color transparent;
+}
+.div-box-day-of-week{
+    -fx-border-color:  -fx-second-color;
+}
+.line{
+    -fx-background-color: -fx-second-color;
+}

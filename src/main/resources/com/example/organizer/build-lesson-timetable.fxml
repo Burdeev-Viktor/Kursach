@@ -1,77 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="516.0" prefWidth="602.0" style="-fx-background-color: #942e2e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.LessonBuildController">
-   <Label layoutX="111.0" layoutY="52.0" text="Название:" textFill="#ccccbe" AnchorPane.leftAnchor="111.0">
+<AnchorPane prefHeight="516.0" prefWidth="602.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.Lesson.LessonBuildController">
+   <Label layoutX="111.0" layoutY="52.0" styleClass="label_color" text="Название:"  AnchorPane.leftAnchor="111.0">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </Label>
-   <Label layoutX="111.0" layoutY="148.0" text="Тип пары:" textFill="#ccccbe" AnchorPane.leftAnchor="111.0">
+   <Label layoutX="111.0" layoutY="148.0" styleClass="label_color" text="Тип пары:"  AnchorPane.leftAnchor="111.0">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </Label>
-   <Label layoutX="111.0" layoutY="198.0" text="Аудитория:" textFill="#ccccbe" AnchorPane.leftAnchor="111.0">
+   <Label layoutX="111.0" layoutY="198.0" styleClass="label_color" text="Аудитория:"  AnchorPane.leftAnchor="111.0">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </Label>
-   <Label layoutX="110.0" layoutY="328.0" text="Номер недели:" textFill="#ccccbe" AnchorPane.leftAnchor="110.0">
+   <Label layoutX="110.0" layoutY="328.0" styleClass="label_color" text="Номер недели:"AnchorPane.leftAnchor="110.0">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </Label>
-   <Label layoutX="110.0" layoutY="374.0" text="День недели:" textFill="#ccccbe" AnchorPane.leftAnchor="110.0">
+   <Label layoutX="110.0" layoutY="374.0" styleClass="label_color" text="День недели:"  AnchorPane.leftAnchor="110.0">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </Label>
-   <TextField fx:id="twRoom" layoutX="268.0" layoutY="192.0" AnchorPane.rightAnchor="109.0">
+   <TextField fx:id="twRoom" layoutX="270.0" layoutY="181.0" styleClass="textField_big" AnchorPane.leftAnchor="270.0">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </TextField>
-   <ChoiceBox fx:id="cbNumberOfWeek" layoutX="267.0" layoutY="322.0" prefHeight="34.0" prefWidth="225.0" AnchorPane.rightAnchor="110.0" />
-   <ChoiceBox fx:id="cbDayOfWeek" layoutX="267.0" layoutY="368.0" prefHeight="34.0" prefWidth="225.0" AnchorPane.rightAnchor="110.0" />
-   <Button fx:id="butClose" layoutX="157.0" layoutY="451.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: transparent; -fx-border-color: ccccbe;" text="Отмена" textFill="#ccccbe">
+   <ChoiceBox fx:id="cbNumberOfWeek" layoutX="267.0" layoutY="322.0" prefHeight="34.0" prefWidth="225.0" styleClass="choice-box-my" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="110.0" />
+   <ChoiceBox fx:id="cbDayOfWeek" layoutX="267.0" layoutY="368.0" prefHeight="34.0" prefWidth="225.0" styleClass="choice-box-my" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="110.0" />
+   <Button fx:id="butClose" layoutX="157.0" layoutY="451.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="123.0" styleClass="button_general" text="Отмена" >
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </Button>
-   <Button fx:id="butSave" layoutX="320.0" layoutY="451.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: transparent; -fx-border-color: ccccbe;" text="Сохранить" textFill="#ccccbe">
+   <Button fx:id="butSave" layoutX="320.0" layoutY="451.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="123.0" styleClass="button_general" text="Сохранить" >
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </Button>
-   <Label layoutX="110.0" layoutY="104.0" text="Преподаватель:" textFill="#ccccbe">
+   <Label layoutX="110.0" layoutY="104.0" styleClass="label_color" text="Преподаватель:" >
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </Label>
-   <TextField fx:id="twTeacher" layoutX="267.0" layoutY="98.0">
+   <TextField fx:id="twTeacher" layoutX="270.0" layoutY="87.0" styleClass="textField_big" AnchorPane.leftAnchor="270.0">
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </TextField>
-   <ChoiceBox fx:id="cbType" layoutX="268.0" layoutY="142.0" prefHeight="34.0" prefWidth="225.0" />
-   <ChoiceBox fx:id="cbName" layoutX="267.0" layoutY="46.0" prefHeight="34.0" prefWidth="225.0" />
-   <Label layoutX="110.0" layoutY="236.0" text="Смена:" textFill="#ccccbe">
+   <ChoiceBox fx:id="cbType" layoutX="268.0" layoutY="142.0" prefHeight="34.0" prefWidth="225.0" styleClass="choice-box-my" AnchorPane.leftAnchor="270.0" />
+   <ChoiceBox fx:id="cbName" layoutX="267.0" layoutY="46.0" prefHeight="34.0" prefWidth="225.0" styleClass="choice-box-my" AnchorPane.leftAnchor="270.0" />
+   <Label layoutX="110.0" layoutY="236.0" styleClass="label_color" text="Смена:" >
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </Label>
-   <ChoiceBox fx:id="cbShift" layoutX="269.0" layoutY="230.0" prefHeight="34.0" prefWidth="225.0" />
-   <Label layoutX="110.0" layoutY="283.0" text="Время:" textFill="#ccccbe">
+   <ChoiceBox fx:id="cbShift" layoutX="267.0" layoutY="234.0" prefHeight="34.0" prefWidth="225.0" styleClass="choice-box-my" AnchorPane.leftAnchor="270.0" />
+   <Label layoutX="110.0" layoutY="283.0" styleClass="label_color" text="Время:" >
       <font>
          <Font name="Arial Rounded MT Bold" size="18.0" />
       </font>
    </Label>
-   <ChoiceBox fx:id="cbTime" layoutX="267.0" layoutY="277.0" prefHeight="34.0" prefWidth="225.0" />
+   <ChoiceBox fx:id="cbTime" layoutX="267.0" layoutY="277.0" prefHeight="34.0" prefWidth="225.0" styleClass="choice-box-my" AnchorPane.leftAnchor="270.0" />
 </AnchorPane>

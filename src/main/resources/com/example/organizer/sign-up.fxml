@@ -4,60 +4,55 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-      prefWidth="770.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.organizer.Controller.SignUpController">
-   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #942e2e;"/>
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="770.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.SignUpController">
+   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
    <AnchorPane prefHeight="400.0" prefWidth="573.0">
-      <Label layoutX="58.0" layoutY="72.0" text="Логин:" AnchorPane.leftAnchor="60.0">
+      <Label layoutX="58.0" layoutY="72.0" styleClass="label_color" text="Логин:" AnchorPane.leftAnchor="60.0">
          <font>
-            <Font name="Arial Rounded MT Bold" size="18.0"/>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="58.0" layoutY="123.0" text="Имя:" AnchorPane.leftAnchor="60.0">
+      <Label layoutX="58.0" layoutY="123.0" styleClass="label_color" text="Имя:" AnchorPane.leftAnchor="60.0">
          <font>
-            <Font name="Arial Rounded MT Bold" size="18.0"/>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="58.0" layoutY="175.0" text="Пороль:" AnchorPane.leftAnchor="60.0">
+      <Label layoutX="58.0" layoutY="175.0" styleClass="label_color" text="Пороль:" AnchorPane.leftAnchor="60.0">
          <font>
-            <Font name="Arial Rounded MT Bold" size="18.0"/>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="58.0" layoutY="225.0" prefHeight="22.0" prefWidth="159.0" text="Подтвердите пороль:"
-             textOverrun="CLIP" AnchorPane.leftAnchor="60.0">
+      <Label layoutX="58.0" layoutY="225.0" prefHeight="22.0" prefWidth="159.0" styleClass="label_color" text="Подтвердите пороль:" textOverrun="CLIP" AnchorPane.leftAnchor="60.0">
          <font>
-            <Font name="Arial Rounded MT Bold" size="16.0"/>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="twLogin" layoutX="272.0" layoutY="66.0" AnchorPane.rightAnchor="75.0">
+      <TextField fx:id="twLogin" layoutX="272.0" layoutY="66.0" styleClass="textField_big" AnchorPane.rightAnchor="75.0">
          <font>
-            <Font name="Arial Rounded MT Bold" size="18.0"/>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="twName" layoutX="272.0" layoutY="117.0" AnchorPane.rightAnchor="75.0">
+      <TextField fx:id="twName" layoutX="272.0" layoutY="117.0" styleClass="textField_big" AnchorPane.rightAnchor="75.0">
          <font>
-            <Font name="Arial Rounded MT Bold" size="18.0"/>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="twPassword" layoutX="272.0" layoutY="169.0" AnchorPane.rightAnchor="75.0">
+      <PasswordField fx:id="twPassword" layoutX="272.0" layoutY="169.0" styleClass="textField_big" AnchorPane.rightAnchor="75.0">
          <font>
-            <Font name="Arial Rounded MT Bold" size="18.0"/>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </PasswordField>
-      <PasswordField fx:id="twSecondPassword" layoutX="272.0" layoutY="219.0" AnchorPane.rightAnchor="75.0">
+      <PasswordField fx:id="twSecondPassword" layoutX="272.0" layoutY="219.0" styleClass="textField_big" AnchorPane.rightAnchor="75.0">
          <font>
-            <Font name="Arial Rounded MT Bold" size="18.0"/>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </PasswordField>
-      <Button fx:id="butSignUp" layoutX="177.0" layoutY="286.0" mnemonicParsing="false" text="Зарегистрироваться">
+      <Button fx:id="butSignUp" layoutX="177.0" layoutY="286.0" mnemonicParsing="false" styleClass="button_general" text="Зарегистрироваться">
          <font>
-            <Font name="Arial Rounded MT Bold" size="18.0"/>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="200.0" layoutY="338.0" text="Уже есть аккаунт?"/>
-      <Button fx:id="butSignIn" layoutX="295.0" layoutY="334.0" mnemonicParsing="false" prefHeight="17.0"
-              prefWidth="49.0" style="-fx-background-color: transparent;" text="Войти" textFill="#2e2583"
-              underline="true"/>
+      <Label layoutX="200.0" layoutY="338.0" styleClass="label_color" text="Уже есть аккаунт?" />
+      <Button fx:id="butSignIn" layoutX="295.0" layoutY="334.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="67.0" styleClass="button_link" text="Войти" textFill="#2e2583" underline="true" />
    </AnchorPane>
 </HBox>

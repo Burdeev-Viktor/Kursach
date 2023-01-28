@@ -13,4 +13,6 @@ module com.example.organizer {
     opens com.example.organizer.CustomView to javafx.fxml;
     exports com.example.organizer.Controller;
     opens com.example.organizer.Controller to javafx.fxml;
+    exports com.example.organizer.Controller.Lesson;
+    opens com.example.organizer.Controller.Lesson to javafx.fxml;
 }

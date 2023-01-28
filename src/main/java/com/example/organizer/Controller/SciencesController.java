@@ -1,12 +1,14 @@
 package com.example.organizer.Controller;
 
 import com.example.organizer.Const;
+import com.example.organizer.Controller.Lesson.LessonBuildController;
+import com.example.organizer.Controller.Lesson.LessonEditController;
+import com.example.organizer.Controller.Lesson.LessonsController;
 import com.example.organizer.Main;
 import com.example.organizer.Repositories.LessonRepo;
 import com.example.organizer.Repositories.LessonTimetableRepo;
 import com.example.organizer.model.LessonTimetable;
 import com.example.organizer.model.Reminder;
-import com.example.organizer.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

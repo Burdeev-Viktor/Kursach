@@ -1,6 +1,7 @@
-package com.example.organizer.Controller;
+package com.example.organizer.Controller.Lesson;
 
 import com.example.organizer.Const;
+import com.example.organizer.Controller.SciencesController;
 import com.example.organizer.Repositories.LessonRepo;
 import com.example.organizer.Repositories.LessonTimetableRepo;
 import com.example.organizer.Service.ThisUser;
@@ -16,8 +17,8 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.example.organizer.Controller.LessonBuildController.errorChecking;
-import static com.example.organizer.Controller.LessonBuildController.settingsChoiceBoxes;
+import static com.example.organizer.Controller.Lesson.LessonBuildController.errorChecking;
+import static com.example.organizer.Controller.Lesson.LessonBuildController.settingsChoiceBoxes;
 
 public class LessonEditController implements Initializable {
     private static Stage tableStage;

@@ -91,6 +91,8 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        dpDate.getEditor().setDisable(true);
+        dpDate.getEditor().setOpacity(1);
         checkBox.setOnAction(event -> {
             if((checkBox.isSelected())){
                 setLab();
