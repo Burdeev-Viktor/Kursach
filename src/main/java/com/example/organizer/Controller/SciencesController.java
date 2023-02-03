@@ -1,14 +1,11 @@
 package com.example.organizer.Controller;
 
 import com.example.organizer.Const;
-import com.example.organizer.Controller.Lesson.LessonBuildController;
-import com.example.organizer.Controller.Lesson.LessonEditController;
-import com.example.organizer.Controller.Lesson.LessonsController;
 import com.example.organizer.Main;
-import com.example.organizer.Repositories.LessonRepo;
-import com.example.organizer.Repositories.LessonTimetableRepo;
+import com.example.organizer.Services.ThisUser;
 import com.example.organizer.model.LessonTimetable;
 import com.example.organizer.model.Reminder;
+import com.example.organizer.service.LessonService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,6 +17,7 @@ import java.io.IOException;
 
 
 public class SciencesController {
+    private static final LessonService lessonService = new LessonService();
     public static void toSignUp(ActionEvent event) {
         Parent root;
         try {
@@ -47,18 +45,10 @@ public class SciencesController {
         stage.setTitle(Const.TITLE_SIGN_IN);
         stage.show();
     }
-    public static void toMain(ActionEvent event, int userId) {
-        if(LessonRepo.lessonTableIsExistsByUser()){
-            LessonRepo.createTimetableByUser();
+    public static void toMain(ActionEvent event, Long userId) {
+
+        if(lessonService.findAllByIdUser(ThisUser.getId()).size() == 0){
             toLessons(event);
-            return;
-        }
-        if(LessonRepo.getAllLessonsByUserId(userId).size() == 0){
-            toLessons(event);
-            return;
-        }
-        if (LessonTimetableRepo.timetableIsExists()) {
-            toTimeTableEdit(event);
             return;
         }
         Parent root;
@@ -70,8 +60,8 @@ public class SciencesController {
         }
         MainController.setWeekCount(0);
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root, 1000, 700));
-        stage.setMinHeight(700);
+        stage.setScene(new Scene(root, 1250, 685));
+        stage.setMinHeight(685);
         stage.setMinWidth(1000);
         stage.setTitle(Const.TITLE_MAIN);
         ReminderEditController.setEventTimetable(stage);
@@ -103,9 +93,6 @@ public class SciencesController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        if (LessonTimetableRepo.timetableIsExists()) {
-            LessonTimetableRepo.createTimetable();
-        }
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root, 1000, 700));
         stage.setTitle(Const.TITLE_TIMETABLE);
@@ -122,9 +109,6 @@ public class SciencesController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        if (LessonTimetableRepo.timetableIsExists()) {
-            LessonTimetableRepo.createTimetable();
-        }
         Stage stage = new Stage();
         stage.setScene(new Scene(root, 1000, 700));
         stage.setTitle(Const.TITLE_TIMETABLE);
@@ -133,12 +117,6 @@ public class SciencesController {
     }
 
     public static void toTimeTableEdit(ActionEvent event) {
-        if(LessonRepo.lessonTableIsExistsByUser()){
-            LessonRepo.createTimetableByUser();
-        }
-        if (LessonTimetableRepo.timetableIsExists()) {
-            LessonTimetableRepo.createTimetable();
-        }
         Parent root;
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("timetable-edit.fxml"));
@@ -161,9 +139,6 @@ public class SciencesController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        if (LessonTimetableRepo.timetableIsExists()) {
-            LessonTimetableRepo.createTimetable();
-        }
         Stage stage = new Stage();
         stage.setScene(new Scene(root, 1000, 700));
         stage.setTitle(Const.TITLE_TIMETABLE);
@@ -178,9 +153,6 @@ public class SciencesController {
             root = loader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
-        if (LessonTimetableRepo.timetableIsExists()) {
-            LessonTimetableRepo.createTimetable();
         }
         stage.setScene(new Scene(root, 1000, 700));
         stage.setTitle(Const.TITLE_TIMETABLE);
@@ -198,9 +170,6 @@ public class SciencesController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        if (LessonTimetableRepo.timetableIsExists()) {
-            LessonTimetableRepo.createTimetable();
-        }
         Stage stage = new Stage();
         stage.setScene(new Scene(root, 600, 520));
         stage.setTitle(Const.TITLE_EDIT_LESSON);
@@ -216,9 +185,6 @@ public class SciencesController {
             reminderEditController.setInfo(reminder);
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
-        if (LessonTimetableRepo.timetableIsExists()) {
-            LessonTimetableRepo.createTimetable();
         }
         Stage stage = new Stage();
         stage.setScene(new Scene(root, 600, 530));
@@ -236,7 +202,7 @@ public class SciencesController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        stage.setScene(new Scene(root, 1000, 700));
+        stage.setScene(new Scene(root, 1250, 685));
         stage.setTitle(Const.TITLE_MAIN);
         stage.show();
     }

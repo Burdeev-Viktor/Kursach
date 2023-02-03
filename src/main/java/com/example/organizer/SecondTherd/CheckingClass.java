@@ -1,15 +1,16 @@
 package com.example.organizer.SecondTherd;
 
 import com.example.organizer.Const;
-import com.example.organizer.Controller.SciencesController;
-import com.example.organizer.Repositories.ReminderRepo;
-import com.example.organizer.Service.ReminderService;
+import com.example.organizer.Services.ThisUser;
 import com.example.organizer.model.Reminder;
+import com.example.organizer.service.ReminderService;
+import com.example.organizer.service.TimetableService;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class CheckingClass extends Thread {
+    private final ReminderService reminderService = new ReminderService();
     private static CheckingClass checkingClass;
     private volatile boolean running;
     private CheckingClass() {
@@ -25,13 +26,14 @@ public class CheckingClass extends Thread {
         return checkingClass;
     }
     public void run() {
+
         running = true;
         while (running) {
             long timeSleep = Const.HOUR_IN_MILLISECONDS;
-            ArrayList<Reminder> reminderArrayList = ReminderRepo.getRemindersEnable();
-            String today = ReminderService.getTodayDayOfWeek();
+            List<Reminder> reminderArrayList = reminderService.findAllRemindersEnableByIdUser(ThisUser.getId());
+            String today = TimetableService.getTodayDayOfWeek();
             for (int i = 0; i < reminderArrayList.size(); i++) {
-                if (!(Objects.equals(reminderArrayList.get(i).getDatOfWeek(), today) || Objects.equals(reminderArrayList.get(i).getSettingSwitch(), "Каждый день"))) {
+                if (!(Objects.equals(reminderArrayList.get(i).getDayOfWeek(), today) || Objects.equals(reminderArrayList.get(i).getSettingSwitch(), "Каждый день"))) {
                     reminderArrayList.remove(i);
                     i--;
                 }

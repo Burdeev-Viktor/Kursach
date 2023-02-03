@@ -1,4 +1,4 @@
-package com.example.organizer.Service;
+package com.example.organizer.Services;
 
 import com.example.organizer.model.User;
 
@@ -17,11 +17,11 @@ public class ThisUser {
      * > 0 - пользователь авторизован
      * -1 - пользователь не авторизован
      */
-    public static int getId(){
+    public static Long getId(){
         if (user != null){
             return user.getId();
         }
-        return -1;
+        return -1L;
     }
 
 }

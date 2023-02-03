@@ -3,13 +3,12 @@ package com.example.organizer.Controller;
 import com.example.organizer.Const;
 import com.example.organizer.CustomView.LessonTimetableNanoView;
 import com.example.organizer.CustomView.ReminderView;
-import com.example.organizer.Repositories.ReminderRepo;
 import com.example.organizer.SecondTherd.CheckingClass;
-import com.example.organizer.Service.LessonService;
-import com.example.organizer.Service.ThisUser;
-import com.example.organizer.Service.TimetableService;
+import com.example.organizer.Services.ThisUser;
 import com.example.organizer.model.LessonTimetable;
 import com.example.organizer.model.Reminder;
+import com.example.organizer.service.ReminderService;
+import com.example.organizer.service.TimetableService;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -20,22 +19,24 @@ import javafx.scene.layout.VBox;
 
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
+    private final ReminderService reminderService= new ReminderService();
+    private final TimetableService timetableService = new TimetableService();
     private static int weekCount;
+    @FXML
+    private Button butLessons;
+    @FXML
+    private Button butTimetable;
     @FXML
     private Button butBack;
     @FXML
     private Button butClose;
     @FXML
     private Button butNext;
-    @FXML
-    private MenuItem mnTimeTable;
-    @FXML
-    private MenuItem mnItemLessons;
     @FXML
     private VBox vb0;
     @FXML
@@ -111,13 +112,13 @@ public class MainController implements Initializable {
             SciencesController.updateMainByEvent(event);
 
         });
-        mnTimeTable.setOnAction(event -> {
-            SciencesController.toNewTimeTableEdit();
+        butLessons.setOnAction(event -> {
+            SciencesController.toLessonsByUser();
             butClose.setDisable(false);
             butClose.fire();
         });
-        mnItemLessons.setOnAction(event -> {
-            SciencesController.toLessonsByUser();
+        butTimetable.setOnAction(event -> {
+            SciencesController.toNewTimeTableEdit();
             butClose.setDisable(false);
             butClose.fire();
         });
@@ -174,7 +175,7 @@ public class MainController implements Initializable {
             reminder.setLessonName(cbLessonName.getValue());
             reminder.setQuest(taQuest.getText());
             reminder.setIdUser(ThisUser.getId());
-            ReminderRepo.addReminderByIdUser(reminder);
+            reminderService.save(reminder);
             return;
         }
         LocalDate localDate = dpDate.getValue();
@@ -199,21 +200,15 @@ public class MainController implements Initializable {
         } else {
             reminder = new Reminder(cbLessonName.getValue(), taQuest.getText(), localDate.toString(), true, cbSwitchSetting.getValue(), cbHours.getValue() + Const.COLON + cbMinuts.getValue(), null);
         }
-        if (ReminderRepo.reminderTableIsExists()) {
-            ReminderRepo.createReminderTable();
-        }
         reminder.setIdUser(ThisUser.getId());
-        ReminderRepo.addReminderByIdUser(reminder);
+        reminderService.save(reminder);
         setDataOfNewReminder();
     }
 
     private void setReminders() {
-        if (ReminderRepo.reminderTableIsExists()) {
-            ReminderRepo.createReminderTable();
-        }
-        ArrayList<Reminder> reminderArrayList = null;
+        List<Reminder> reminderArrayList = null;
 
-        reminderArrayList = ReminderRepo.getAllRemindersByUser(ThisUser.getId());
+        reminderArrayList = reminderService.findAllByIdUser(ThisUser.getId());
 
         for (Reminder reminder : reminderArrayList) {
             ReminderView customControl = new ReminderView(reminder);
@@ -231,7 +226,7 @@ public class MainController implements Initializable {
         VBox[] vBoxes = {
                 vb0, vb1, vb2, vb3, vb4, vb5
         };
-        LessonTimetable[][] lessonTimetableList = TimetableService.getSortLessonsTimetableOneWeek(LessonService.getLessonsThisWeek(weekCount));
+        LessonTimetable[][] lessonTimetableList = timetableService.getSortLessonsTimetableOneWeek(timetableService.getLessonsWeekByNumber(weekCount));
         for (int d = 0; d < 6 ; d++){
             if(lessonTimetableList[d] == null){
                 continue;

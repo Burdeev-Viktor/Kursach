@@ -1,199 +1,228 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="700.0" prefWidth="1000.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.MainController">
-   <VBox layoutY="25.0" prefWidth="1126.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <MenuBar prefHeight="25.0" prefWidth="364.0" VBox.vgrow="NEVER">
-         <Menu mnemonicParsing="false" text="Edit">
-            <MenuItem fx:id="mnItemLessons" mnemonicParsing="false" text="Предметы" />
-            <MenuItem fx:id="mnTimeTable" mnemonicParsing="false" text="Расписание" />
-         </Menu>
-         <Menu mnemonicParsing="false" text="Help">
-            <MenuItem mnemonicParsing="false" text="About" />
-         </Menu>
-      </MenuBar>
-      <AnchorPane maxHeight="160.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="141.0" prefWidth="1000.0" VBox.vgrow="SOMETIMES">
-         <Button fx:id="butBack" layoutY="44.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: transparent;" text="&lt;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <font>
-               <Font name="Arial Rounded MT Bold" size="24.0" />
-            </font>
-         </Button>
-         <AnchorPane layoutX="87.0" layoutY="-50.0" prefHeight="100.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="0.0">
-            <HBox layoutX="192.0" layoutY="8.0" prefHeight="100.0" prefWidth="880.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <padding>
-                  <Insets left="5.0" right="5.0" />
-               </padding>
-               <VBox fx:id="vb0" prefHeight="97.0" prefWidth="80.0" styleClass="div-box-day-of-week" HBox.hgrow="SOMETIMES">
-                  <AnchorPane prefHeight="15.0" prefWidth="80.0" styleClass="div-day-of-week">
-                     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" styleClass="label_color" text="Понедельник" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  </AnchorPane>
-               </VBox>
-               <VBox fx:id="vb1" prefHeight="200.0" prefWidth="80.0" styleClass="div-box-day-of-week" HBox.hgrow="SOMETIMES">
-                  <AnchorPane prefHeight="15.0" prefWidth="80.0" styleClass="div-day-of-week">
-                     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" styleClass="label_color" text="Вторник" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  </AnchorPane>
-               </VBox>
-               <VBox fx:id="vb2" prefHeight="200.0" prefWidth="80.0" styleClass="div-box-day-of-week" HBox.hgrow="SOMETIMES">
-                  <AnchorPane prefHeight="15.0" prefWidth="80.0" styleClass="div-day-of-week">
-                     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" styleClass="label_color" text="Среда" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  </AnchorPane>
-               </VBox>
-               <VBox fx:id="vb3" prefHeight="200.0" prefWidth="80.0" styleClass="div-box-day-of-week" HBox.hgrow="SOMETIMES">
-                  <AnchorPane prefHeight="15.0" prefWidth="80.0" styleClass="div-day-of-week">
-                     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" styleClass="label_color" text="Четверг" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  </AnchorPane>
-               </VBox>
-               <VBox fx:id="vb4" prefHeight="200.0" prefWidth="80.0" styleClass="div-box-day-of-week" HBox.hgrow="SOMETIMES">
-                  <AnchorPane prefHeight="15.0" prefWidth="80.0" styleClass="div-day-of-week">
-                     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" styleClass="label_color" text="Пятница" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  </AnchorPane>
-               </VBox>
-               <VBox fx:id="vb5" prefHeight="200.0" prefWidth="80.0" styleClass="div-box-day-of-week" HBox.hgrow="SOMETIMES">
-                  <AnchorPane prefHeight="15.0" prefWidth="80.0" styleClass="div-day-of-week">
-                     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" styleClass="label_color" text="Суббота" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  </AnchorPane>
-               </VBox>
-            </HBox>
-         </AnchorPane>
-         <Button fx:id="butNext" layoutX="543.0" layoutY="38.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="60.0" style="-fx-background-color: transparent;" text="&gt;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <font>
-               <Font name="Arial Rounded MT Bold" size="24.0" />
-            </font>
-         </Button>
-      </AnchorPane>
-      <AnchorPane prefHeight="11.0" prefWidth="891.0">
-         <padding>
-            <Insets left="20.0" right="20.0" />
-         </padding>
-         <AnchorPane layoutX="162.0" prefHeight="200.0" prefWidth="200.0" styleClass="line" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
-      </AnchorPane>
-      <AnchorPane prefHeight="421.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
-         <HBox layoutX="244.0" layoutY="132.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="415.0" HBox.hgrow="SOMETIMES">
-               <children>
-                  <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="32.0" layoutY="92.0" prefHeight="489.0" prefWidth="300.0" styleClass="body" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <content>
-                        <VBox fx:id="vbReminders" maxHeight="1.7976931348623157E308" prefHeight="254.0" prefWidth="220.0" spacing="5.0" styleClass="body">
-                           <children>
-                              <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="57.0" prefWidth="298.0">
-                                 <children>
-                                    <Label alignment="CENTER" layoutX="123.0" layoutY="15.0" prefHeight="28.0" prefWidth="120.0" styleClass="label_color" text="  Задания  " textAlignment="CENTER" underline="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <font>
-                                          <Font name="Arial Rounded MT Bold" size="24.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                           <padding>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </padding>
-                        </VBox>
-                     </content>
-                  </ScrollPane>
-               </children></AnchorPane>
-            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="11.0" HBox.hgrow="NEVER">
-               <padding>
-                  <Insets bottom="15.0" top="15.0" />
-               </padding>
-               <AnchorPane layoutX="14.0" layoutY="60.0" prefHeight="399.0" prefWidth="26.0" styleClass="line" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="45.0" />
-            </AnchorPane>
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="592.0" HBox.hgrow="ALWAYS">
-               <children>
-                  <AnchorPane cacheShape="false" centerShape="false" layoutX="55.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="486.0" prefWidth="492.0" scaleShape="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="12.0">
-                     <children>
-                        <Label layoutX="60.0" layoutY="55.0" styleClass="label_color" text="Предмет:" AnchorPane.leftAnchor="60.0">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="60.0" layoutY="109.0" styleClass="label_color" text="Задание:" AnchorPane.leftAnchor="60.0">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <TextArea fx:id="taQuest" layoutX="233.0" layoutY="104.0" prefHeight="53.0" prefWidth="225.0" styleClass="text-area-big">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="13.0" />
-                           </font>
-                        </TextArea>
-                        <Button fx:id="butAdd" layoutX="200.0" layoutY="442.0" mnemonicParsing="false" styleClass="button_general" text="Добавить" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="200.0">
-                           <font>
-                              <Font name="Arial Rounded MT Bold" size="18.0" />
-                           </font>
-                        </Button>
-                        <ChoiceBox fx:id="cbLessonName" layoutX="233.0" layoutY="54.0" prefHeight="25.0" prefWidth="225.0" styleClass="choice-box-my" />
-                        <CheckBox fx:id="checkBox" layoutX="60.0" layoutY="149.0" mnemonicParsing="false" styleClass="check-box-my" text="Лабораторные работы" />
-                        <AnchorPane fx:id="paneStandart" layoutX="55.0" layoutY="178.0" prefHeight="249.0" prefWidth="436.0" AnchorPane.leftAnchor="60.0">
-                           <children>
-                              <Label layoutX="2.0" layoutY="71.0" styleClass="label_color" text="Напоминать:" AnchorPane.leftAnchor="0.0">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbSetting" layoutX="2.0" layoutY="124.0" styleClass="label_color" text="Как:" AnchorPane.leftAnchor="0.0">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbTime" layoutX="2.0" layoutY="173.0" styleClass="label_color" text="Время:" AnchorPane.leftAnchor="0.0">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutY="14.0" styleClass="label_color" text="Дата сдачи:" AnchorPane.leftAnchor="0.0">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbDayOfWeek" layoutX="2.0" layoutY="215.0" styleClass="label_color" text="День недели:" AnchorPane.leftAnchor="0.0">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <DatePicker fx:id="dpDate" layoutX="184.0" layoutY="9.0" prefHeight="25.0" prefWidth="225.0" styleClass="date-picker-my" stylesheets="@style-date-piker.css" />
-                              <ChoiceBox fx:id="cbSwitch" layoutX="184.0" layoutY="67.0" prefHeight="25.0" prefWidth="225.0" styleClass="choice-box-my" />
-                              <ChoiceBox fx:id="cbSwitchSetting" layoutX="184.0" layoutY="121.0" prefHeight="25.0" prefWidth="225.0" styleClass="choice-box-my" />
-                              <ChoiceBox fx:id="cbDayOfWeek" layoutX="184.0" layoutY="214.0" prefHeight="25.0" prefWidth="225.0" styleClass="choice-box-my" />
-                              <ChoiceBox fx:id="cbHours" layoutX="184.0" layoutY="172.0" prefHeight="25.0" prefWidth="57.0" styleClass="choice-box-my" />
-                              <Label fx:id="ldtime1" layoutX="254.0" layoutY="174.0" styleClass="label_color" text=":">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <ChoiceBox fx:id="cbMinuts" layoutX="275.0" layoutY="173.0" prefHeight="25.0" prefWidth="57.0" styleClass="choice-box-my" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="paneLab" disable="true" layoutX="56.0" layoutY="178.0" prefHeight="154.0" prefWidth="436.0" visible="false">
-                           <children>
-                              <Label fx:id="lbNeed" layoutX="14.0" layoutY="25.0" styleClass="label_color" text="Нужно сдать:">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="twCountLab" alignment="CENTER" layoutX="172.0" layoutY="21.0" prefHeight="35.0" prefWidth="57.0" promptText="0" styleClass="textField_big">
-                                 <font>
-                                    <Font name="Arial Rounded MT Bold" size="14.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                  </AnchorPane>
-               </children></AnchorPane>
-         </HBox>
-      </AnchorPane>
-   </VBox>
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="685.0" prefWidth="1250.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.MainController">
    <Button fx:id="butClose" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
       <font>
          <Font size="10.0" />
       </font>
    </Button>
+   <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <VBox minWidth="-Infinity" prefHeight="699.0" prefWidth="221.0" styleClass="menu_app" HBox.hgrow="NEVER">
+            <children>
+               <AnchorPane prefHeight="26.0" prefWidth="250.0" />
+               <AnchorPane prefHeight="83.0" prefWidth="250.0">
+                  <children>
+                     <Label alignment="CENTER" layoutX="42.0" layoutY="21.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="21.0" prefWidth="138.0" text="Студеньческий" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="21.0">
+                        <styleClass>
+                           <String fx:value="label_color" />
+                           <String fx:value="label_big" />
+                           <String fx:value="label" />
+                        </styleClass>
+                     </Label>
+                     <Label layoutX="64.0" layoutY="42.0" text="органайзер">
+                        <styleClass>
+                           <String fx:value="label" />
+                           <String fx:value="label_color" />
+                           <String fx:value="label_big" />
+                        </styleClass>
+                     </Label>
+                  </children>
+               </AnchorPane>
+               <AnchorPane prefHeight="64.0" prefWidth="250.0" />
+               <AnchorPane prefHeight="188.0" prefWidth="221.0">
+                  <children>
+                     <Button fx:id="butLessons" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" styleClass="button_menu" text="Предметы" />
+                     <Button fx:id="butTimetable" layoutX="14.0" layoutY="75.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" styleClass="button_menu" text="Расписание" />
+                  </children>
+               </AnchorPane>
+            </children>
+         </VBox>
+         <VBox prefHeight="699.0" prefWidth="1400.0" spacing="5.0" HBox.hgrow="SOMETIMES">
+            <AnchorPane minHeight="-Infinity" prefHeight="10.0" />
+            <AnchorPane maxHeight="160.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="141.0" prefWidth="1000.0" VBox.vgrow="SOMETIMES">
+               <Button fx:id="butBack" layoutY="44.0" mnemonicParsing="false" prefWidth="60.0" style="-fx-background-color: transparent;" text="&lt;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <font>
+                     <Font name="Arial Rounded MT Bold" size="24.0" />
+                  </font>
+               </Button>
+               <AnchorPane layoutX="87.0" layoutY="-50.0" prefHeight="100.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="0.0">
+                  <HBox layoutX="192.0" layoutY="8.0" prefHeight="100.0" prefWidth="880.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+                     <VBox fx:id="vb0" prefHeight="97.0" prefWidth="80.0" styleClass="div-box-day-of-week" HBox.hgrow="SOMETIMES">
+                        <AnchorPane prefHeight="15.0" prefWidth="80.0" styleClass="div-day-of-week">
+                           <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" styleClass="label_color" text="Понедельник" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        </AnchorPane>
+                     </VBox>
+                     <VBox fx:id="vb1" prefHeight="200.0" prefWidth="80.0" styleClass="div-box-day-of-week" HBox.hgrow="SOMETIMES">
+                        <AnchorPane prefHeight="15.0" prefWidth="80.0" styleClass="div-day-of-week">
+                           <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" styleClass="label_color" text="Вторник" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        </AnchorPane>
+                     </VBox>
+                     <VBox fx:id="vb2" prefHeight="200.0" prefWidth="80.0" styleClass="div-box-day-of-week" HBox.hgrow="SOMETIMES">
+                        <AnchorPane prefHeight="15.0" prefWidth="80.0" styleClass="div-day-of-week">
+                           <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" styleClass="label_color" text="Среда" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        </AnchorPane>
+                     </VBox>
+                     <VBox fx:id="vb3" prefHeight="200.0" prefWidth="80.0" styleClass="div-box-day-of-week" HBox.hgrow="SOMETIMES">
+                        <AnchorPane prefHeight="15.0" prefWidth="80.0" styleClass="div-day-of-week">
+                           <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" styleClass="label_color" text="Четверг" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        </AnchorPane>
+                     </VBox>
+                     <VBox fx:id="vb4" prefHeight="200.0" prefWidth="80.0" styleClass="div-box-day-of-week" HBox.hgrow="SOMETIMES">
+                        <AnchorPane prefHeight="15.0" prefWidth="80.0" styleClass="div-day-of-week">
+                           <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" styleClass="label_color" text="Пятница" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        </AnchorPane>
+                     </VBox>
+                     <VBox fx:id="vb5" prefHeight="200.0" prefWidth="80.0" styleClass="div-box-day-of-week" HBox.hgrow="SOMETIMES">
+                        <AnchorPane prefHeight="15.0" prefWidth="80.0" styleClass="div-day-of-week">
+                           <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="-1.0" styleClass="label_color" text="Суббота" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        </AnchorPane>
+                     </VBox>
+                  </HBox>
+               </AnchorPane>
+               <Button fx:id="butNext" layoutX="543.0" layoutY="38.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="60.0" style="-fx-background-color: transparent;" text="&gt;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <font>
+                     <Font name="Arial Rounded MT Bold" size="24.0" />
+                  </font>
+               </Button>
+            </AnchorPane>
+            <AnchorPane prefHeight="11.0" prefWidth="891.0">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+               <AnchorPane layoutX="162.0" prefHeight="200.0" prefWidth="200.0" styleClass="line" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0" />
+            </AnchorPane>
+            <AnchorPane prefHeight="421.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+               <HBox layoutX="244.0" layoutY="132.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="415.0" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="32.0" layoutY="92.0" prefHeight="489.0" prefWidth="300.0" styleClass="body" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox fx:id="vbReminders" maxHeight="1.7976931348623157E308" prefHeight="254.0" prefWidth="220.0" spacing="5.0" styleClass="body">
+                                 <children>
+                                    <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="57.0" prefWidth="298.0">
+                                       <children>
+                                          <Label alignment="CENTER" layoutX="123.0" layoutY="15.0" prefHeight="28.0" prefWidth="120.0" styleClass="label_color" text="  Задания  " textAlignment="CENTER" underline="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="11.0" HBox.hgrow="NEVER">
+                     <padding>
+                        <Insets bottom="15.0" top="15.0" />
+                     </padding>
+                     <AnchorPane layoutX="14.0" layoutY="60.0" prefHeight="399.0" prefWidth="26.0" styleClass="line" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="45.0" />
+                  </AnchorPane>
+                  <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="592.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <AnchorPane cacheShape="false" centerShape="false" layoutX="55.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="486.0" prefWidth="492.0" scaleShape="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="12.0">
+                           <children>
+                              <Label layoutX="60.0" layoutY="55.0" styleClass="label_color" text="Предмет:" AnchorPane.leftAnchor="60.0">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="60.0" layoutY="109.0" styleClass="label_color" text="Задание:" AnchorPane.leftAnchor="60.0">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="taQuest" layoutX="233.0" layoutY="104.0" prefHeight="53.0" prefWidth="225.0" styleClass="text-area-big">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="13.0" />
+                                 </font>
+                              </TextArea>
+                              <Button fx:id="butAdd" layoutX="200.0" layoutY="442.0" mnemonicParsing="false" styleClass="button_general" text="Добавить" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="200.0">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <ChoiceBox fx:id="cbLessonName" layoutX="233.0" layoutY="54.0" prefHeight="25.0" prefWidth="225.0" styleClass="choice-box-my" />
+                              <CheckBox fx:id="checkBox" layoutX="60.0" layoutY="149.0" mnemonicParsing="false" styleClass="check-box-my" text="Лабораторные работы" />
+                              <AnchorPane fx:id="paneStandart" layoutX="55.0" layoutY="178.0" prefHeight="249.0" prefWidth="436.0" AnchorPane.leftAnchor="60.0">
+                                 <children>
+                                    <Label layoutX="2.0" layoutY="71.0" styleClass="label_color" text="Напоминать:" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbSetting" layoutX="2.0" layoutY="124.0" styleClass="label_color" text="Как:" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbTime" layoutX="2.0" layoutY="173.0" styleClass="label_color" text="Время:" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutY="14.0" styleClass="label_color" text="Дата сдачи:" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbDayOfWeek" layoutX="2.0" layoutY="215.0" styleClass="label_color" text="День недели:" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="dpDate" layoutX="166.0" layoutY="10.0" prefHeight="25.0" prefWidth="225.0" styleClass="date-picker-my" stylesheets="@style-date-piker.css" />
+                                    <ChoiceBox fx:id="cbSwitch" layoutX="166.0" layoutY="68.0" prefHeight="25.0" prefWidth="225.0" styleClass="choice-box-my" />
+                                    <ChoiceBox fx:id="cbSwitchSetting" layoutX="166.0" layoutY="122.0" prefHeight="25.0" prefWidth="225.0" styleClass="choice-box-my" />
+                                    <ChoiceBox fx:id="cbDayOfWeek" layoutX="166.0" layoutY="215.0" prefHeight="25.0" prefWidth="225.0" styleClass="choice-box-my" />
+                                    <ChoiceBox fx:id="cbHours" layoutX="166.0" layoutY="173.0" prefHeight="25.0" prefWidth="57.0" styleClass="choice-box-my" />
+                                    <Label fx:id="ldtime1" layoutX="236.0" layoutY="175.0" styleClass="label_color" text=":">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="cbMinuts" layoutX="257.0" layoutY="174.0" prefHeight="25.0" prefWidth="57.0" styleClass="choice-box-my" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="paneLab" disable="true" layoutX="56.0" layoutY="178.0" prefHeight="154.0" prefWidth="436.0" visible="false">
+                                 <children>
+                                    <Label fx:id="lbNeed" layoutX="14.0" layoutY="25.0" styleClass="label_color" text="Нужно сдать:">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="twCountLab" alignment="CENTER" layoutX="172.0" layoutY="21.0" prefHeight="35.0" prefWidth="57.0" promptText="0" styleClass="textField_big">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="14.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </HBox>
+            </AnchorPane>
+         </VBox>
+      </children>
+   </HBox>
 </AnchorPane>

@@ -8,5 +8,16 @@
       <jdbc-url>jdbc:mysql://127.0.0.1:3306/organizer_db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="fdb3db6f-6eb5-4f78-a83c-fe9a443b2420">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+H:/Java/Optimizm/Kursach/src/main/resources/hibernate.cfg.xml</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/organizer_db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

@@ -7,6 +7,17 @@
 .body{
     -fx-background-color:  -fx-general-color;
 }
+.button_menu{
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-second-color ;
+    -fx-font-size: 18px;
+}
+.menu_app{
+    -fx-background-color: #363836;
+}
+.button_menu:hover{
+    -fx-font-size: 20px;
+}
 .button_general{
     -fx-background-color:   transparent;
     -fx-border-color:  -fx-second-color;

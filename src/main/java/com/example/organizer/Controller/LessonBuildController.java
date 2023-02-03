@@ -1,11 +1,12 @@
-package com.example.organizer.Controller.Lesson;
+package com.example.organizer.Controller;
 
 import com.example.organizer.Const;
-import com.example.organizer.Controller.SciencesController;
-import com.example.organizer.Repositories.LessonRepo;
-import com.example.organizer.Repositories.LessonTimetableRepo;
-import com.example.organizer.Service.ThisUser;
+
+
+import com.example.organizer.Services.ThisUser;
 import com.example.organizer.model.LessonTimetable;
+import com.example.organizer.service.LessonService;
+import com.example.organizer.service.TimetableService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,6 +20,8 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LessonBuildController implements Initializable {
+    private static final LessonService lessonService = new LessonService();
+    private final TimetableService timetableService = new TimetableService();
     private static ActionEvent eventTimetable;
     @FXML
     private Button butClose;
@@ -64,7 +67,7 @@ public class LessonBuildController implements Initializable {
         cbType.setStyle("-fx-font-size: 18");
         cbType.setValue(Const.DEFAULT_VALUE_CHOICE_BOX);
 
-        array = LessonRepo.getAllLessonsNameByUserId(ThisUser.getId());
+        array = lessonService.getAllLessonsNameByIdUser(ThisUser.getId());
         cbName.getItems().addAll(array);
         cbName.setStyle("-fx-font-style: Arial Rounded MT Bold");
         cbName.setStyle("-fx-font-size: 18");
@@ -133,7 +136,7 @@ public class LessonBuildController implements Initializable {
                 case "Каждую" -> lessonTimetable.setNumberOfWeek(2);
             }
             lessonTimetable.setIdUser(ThisUser.getId());
-            LessonTimetableRepo.addLessonTimetableByIdUser(lessonTimetable);
+            timetableService.save(lessonTimetable);
             SciencesController.toTimeTableEdit(eventTimetable);
             SciencesController.closeThis(event);
         });

@@ -1,17 +1,39 @@
 package com.example.organizer.model;
 
+import jakarta.persistence.*;
+import lombok.Data;
+
+
+@Entity
+@Data
+@Table(name = "timetable")
 public class LessonTimetable {
-    private int id;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "id_user")
+    private Long idUser;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "teacher")
+    private String teacher;
+    @Column(name = "room")
+    private String room;
+    @Column(name = "time")
+    private String time;
+    @Column(name = "type")
+    private String type;
+    @Column(name = "day_of_week")
+    private int dayOfWeek;
+    @Column(name = "number_of_week")
+    private int numberOfWeek;
 
-    public int getIdUser() {
-        return idUser;
+    public LessonTimetable() {
+
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
-    }
-
-    public LessonTimetable(int id, int idUser, String name, String teacher, String room, String time, String type, int dayOfWeek, int numberOfWeek) {
+    public LessonTimetable(Long id, Long idUser, String name, String teacher, String room, String time, String type, int dayOfWeek, int numberOfWeek) {
         this.id = id;
         this.idUser = idUser;
         this.name = name;
@@ -21,24 +43,6 @@ public class LessonTimetable {
         this.type = type;
         this.dayOfWeek = dayOfWeek;
         this.numberOfWeek = numberOfWeek;
-    }
-
-    private int idUser;
-    private String name;
-    private String teacher;
-    private String room;
-    private String time;
-    private String type;
-    private int dayOfWeek;
-    private int numberOfWeek;
-
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
     }
 
     public LessonTimetable(String name, String teacher, String room, String time, String type, int dayOfWeek, int numberOfWeek) {
@@ -51,7 +55,7 @@ public class LessonTimetable {
         this.numberOfWeek = numberOfWeek;
     }
 
-    public LessonTimetable(int id, String name, String teacher, String room, String time, String type, int dayOfWeek, int numberOfWeek) {
+    public LessonTimetable(Long id, String name, String teacher, String room, String time, String type, int dayOfWeek, int numberOfWeek) {
         this.id = id;
         this.name = name;
         this.teacher = teacher;
@@ -62,55 +66,4 @@ public class LessonTimetable {
         this.numberOfWeek = numberOfWeek;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(String teacher) {
-        this.teacher = teacher;
-    }
-
-    public String getRoom() {
-        return room;
-    }
-
-    public void setRoom(String room) {
-        this.room = room;
-    }
-
-    public int getDayOfWeek() {
-        return dayOfWeek;
-    }
-
-    public void setDayOfWeek(int dayOfWeek) {
-        this.dayOfWeek = dayOfWeek;
-    }
-
-    public int getNumberOfWeek() {
-        return numberOfWeek;
-    }
-
-    public void setNumberOfWeek(int numberOfWeek) {
-        this.numberOfWeek = numberOfWeek;
-    }
 }

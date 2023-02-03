@@ -1,10 +1,10 @@
 package com.example.organizer.Controller;
 
 import com.example.organizer.Const;
-import com.example.organizer.Repositories.UserRepo;
 import com.example.organizer.SecondTherd.SystemTrayClass;
-import com.example.organizer.Service.ThisUser;
+import com.example.organizer.Services.ThisUser;
 import com.example.organizer.model.User;
+import com.example.organizer.service.UserService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -16,6 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SignInController implements Initializable {
+    private final UserService userService = new UserService();
     @FXML
     private Button butSignIn;
     @FXML
@@ -27,6 +28,7 @@ public class SignInController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         butSignUp.setOnAction(SciencesController::toSignUp);
         butSignIn.setOnAction(event -> {
             if (twLogin.getText() == null || twPassword.getText() == null) {
@@ -35,14 +37,14 @@ public class SignInController implements Initializable {
                 alert.show();
                 return;
             }
-            if (!UserRepo.userIsExistsByUser(new User(twLogin.getText(), twPassword.getText()))) {
+            if (!userService.userIsExistsByLoginAndPassword(new User(twLogin.getText(), twPassword.getText()))) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText(Const.MESSAGE_ERROR_SIGN_IN);
                 alert.show();
                 return;
             }
-            User user = UserRepo.getUserByLogin(twLogin.getText());
-            new ThisUser(user);
+
+            new ThisUser(userService.findUserByLogin(twLogin.getText()));
             SystemTrayClass.start();
             SciencesController.toMain(event, ThisUser.getId());
         });

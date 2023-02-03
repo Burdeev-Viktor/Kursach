@@ -1,11 +1,8 @@
 package com.example.organizer.CustomView;
 
-import com.example.organizer.Controller.SciencesController;
 import com.example.organizer.Main;
-import com.example.organizer.Repositories.LessonRepo;
-import com.example.organizer.Service.ThisUser;
 import com.example.organizer.model.Lesson;
-import com.example.organizer.model.LessonTimetable;
+import com.example.organizer.service.LessonService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -16,6 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LessonView extends AnchorPane {
+    private final LessonService lessonService = new LessonService();
     @FXML
     private Label lbName;
     @FXML
@@ -39,7 +37,7 @@ public class LessonView extends AnchorPane {
 
         });
         butDel.setOnAction(event -> {
-            LessonRepo.deleteLessonById(lesson);
+            lessonService.delete(lesson);
             this.setVisible(false);
             this.setDisable(true);
             this.setHeight(0);

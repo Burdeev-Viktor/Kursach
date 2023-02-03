@@ -1,11 +1,11 @@
-package com.example.organizer.Controller.Lesson;
+package com.example.organizer.Controller;
 
 import com.example.organizer.Const;
-import com.example.organizer.Controller.SciencesController;
-import com.example.organizer.Repositories.LessonRepo;
-import com.example.organizer.Repositories.LessonTimetableRepo;
-import com.example.organizer.Service.ThisUser;
+
+import com.example.organizer.Services.ThisUser;
 import com.example.organizer.model.LessonTimetable;
+import com.example.organizer.service.LessonService;
+import com.example.organizer.service.TimetableService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -17,10 +17,12 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.example.organizer.Controller.Lesson.LessonBuildController.errorChecking;
-import static com.example.organizer.Controller.Lesson.LessonBuildController.settingsChoiceBoxes;
+import static com.example.organizer.Controller.LessonBuildController.errorChecking;
+import static com.example.organizer.Controller.LessonBuildController.settingsChoiceBoxes;
 
 public class LessonEditController implements Initializable {
+    private final LessonService lessonService = new LessonService();
+    private final TimetableService timetableService = new TimetableService();
     private static Stage tableStage;
     @FXML
     private Button butClose;
@@ -74,12 +76,14 @@ public class LessonEditController implements Initializable {
                 case "Вторая" -> lessonTimetable.setNumberOfWeek(1);
                 case "Каждую" -> lessonTimetable.setNumberOfWeek(2);
             }
-            LessonTimetableRepo.updateLessonTimetableById(lessonTimetable, this.lessonTimetable.getId(), ThisUser.getId());
+            lessonTimetable.setId(this.lessonTimetable.getId());
+            lessonTimetable.setIdUser(ThisUser.getId());
+            timetableService.save(lessonTimetable);
             SciencesController.updateTimeTableEdit( tableStage);
             SciencesController.closeThis(event);
         });
         butDel.setOnAction(event -> {
-            LessonTimetableRepo.deleteLessonOfTimeTableById(this.lessonTimetable);
+            timetableService.delete(this.lessonTimetable);
             SciencesController.updateTimeTableEdit( tableStage);
             SciencesController.closeThis(event);
         });
@@ -105,6 +109,6 @@ public class LessonEditController implements Initializable {
             case 1 -> cbNumberOfWeek.setValue(Const.CHOICE_BOX_NUMBER_OF_WEEK[1]);
             case 2 -> cbNumberOfWeek.setValue(Const.CHOICE_BOX_NUMBER_OF_WEEK[2]);
         }
-        cbName.getItems().addAll(LessonRepo.getAllLessonsNameByUserId(ThisUser.getId()));
+        cbName.getItems().addAll(lessonService.getAllLessonsNameByIdUser(ThisUser.getId()));
     }
 }

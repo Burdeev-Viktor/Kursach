@@ -1,8 +1,8 @@
 package com.example.organizer.Controller;
 
 import com.example.organizer.Const;
-import com.example.organizer.Repositories.UserRepo;
 import com.example.organizer.model.User;
+import com.example.organizer.service.UserService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -15,6 +15,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class SignUpController implements Initializable {
+    private final UserService userService = new UserService();
     @FXML
     private Button butSignIn;
     @FXML
@@ -50,14 +51,14 @@ public class SignUpController implements Initializable {
                 alert.show();
                 return;
             }
-            if (UserRepo.userIsExistsByLogin(twLogin.getText())) {
+            if (userService.userIsExistsByLogin(twLogin.getText())) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText(Const.MESSAGE_ERROR_USERNAME_IS_EXIST);
                 alert.show();
                 return;
             }
             User user = new User(twLogin.getText(), twPassword.getText(), twName.getText());
-            UserRepo.signUpUser(user);
+            userService.save(user);
             SciencesController.toSignIn(event);
         });
 

@@ -1,11 +1,10 @@
 package com.example.organizer.Controller;
 
 import com.example.organizer.Const;
-import com.example.organizer.Repositories.LessonRepo;
-import com.example.organizer.Repositories.ReminderRepo;
-import com.example.organizer.Service.ReminderService;
-import com.example.organizer.Service.ThisUser;
+import com.example.organizer.Services.ThisUser;
 import com.example.organizer.model.Reminder;
+import com.example.organizer.service.LessonService;
+import com.example.organizer.service.ReminderService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -19,6 +18,8 @@ import java.util.ResourceBundle;
 
 
 public class ReminderEditController implements Initializable {
+    private static final LessonService lessonService = new LessonService();
+    private final ReminderService reminderService= new ReminderService();
     private static Stage mainStage;
     @FXML
     private Button butSave;
@@ -79,7 +80,7 @@ public class ReminderEditController implements Initializable {
     }
 
     static void setDataOfcb(ChoiceBox<String> cbLessonName, TextArea taQuest, ChoiceBox<String> cbSwitch, ChoiceBox<String> cbSwitchSetting, ChoiceBox<String> cbHours, ChoiceBox<String> cbMinuts, ChoiceBox<String> cbDayOfWeek) {
-        cbLessonName.getItems().setAll(LessonRepo.getAllLessonsNameByUserId(ThisUser.getId()));
+        cbLessonName.getItems().setAll(lessonService.getAllLessonsNameByIdUser(ThisUser.getId()));
         taQuest.setText("");
         String[] arrayItemsOfCb = {Const.CHOICE_BOX_YES, Const.CHOICE_BOX_NO};
         cbSwitch.getItems().addAll(arrayItemsOfCb);
@@ -156,7 +157,7 @@ public class ReminderEditController implements Initializable {
         butClose.setOnAction(SciencesController::closeThis);
         butDel.setOnAction(event -> {
             reminder.setIdUser(ThisUser.getId());
-            ReminderRepo.deleteReminderById( reminder);
+            reminderService.delete( reminder);
             SciencesController.updateMainByStage(ReminderEditController.mainStage);
             butClose.fire();
         });
@@ -180,7 +181,9 @@ public class ReminderEditController implements Initializable {
             reminderUp.setLessonName(cbLessonName.getValue());
             reminderUp.setNeedWork(reminder.getNeedWork());
             reminderUp.setCloseWork(reminder.getCloseWork());
-            ReminderRepo.updateRminderById(reminderUp, reminder.getId());
+            reminderUp.setId(reminder.getId());
+            reminderUp.setIdUser(reminder.getId());
+            reminderService.save(reminderUp);
             SciencesController.updateMainByStage(ReminderEditController.mainStage);
             return true;
         }
@@ -206,10 +209,8 @@ public class ReminderEditController implements Initializable {
         } else {
             reminder = new Reminder(cbLessonName.getValue(), taQuest.getText(), localDate.toString(), true, cbSwitchSetting.getValue(), cbHours.getValue() + Const.COLON + cbMinuts.getValue(), null);
         }
-        if (ReminderRepo.reminderTableIsExists()) {
-            ReminderRepo.createReminderTable();
-        }
-        ReminderRepo.updateRminderById(reminder, this.reminder.getId());
+        reminder.setId(this.reminder.getId());
+        reminderService.save(reminder);
         SciencesController.updateMainByStage(ReminderEditController.mainStage);
         return true;
     }
@@ -259,10 +260,10 @@ public class ReminderEditController implements Initializable {
         }
         cbHours.setValue(ReminderService.getHours(reminder.getTime()));
         cbMinuts.setValue(ReminderService.getMinutes(reminder.getTime()));
-        if (reminder.getDatOfWeek() == null) {
+        if (reminder.getDayOfWeek() == null) {
             cbDayOfWeek.setValue(Const.DEFAULT_VALUE_CHOICE_BOX);
         } else {
-            cbDayOfWeek.setValue(reminder.getDatOfWeek());
+            cbDayOfWeek.setValue(reminder.getDayOfWeek());
         }
     }
 

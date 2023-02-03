@@ -1,0 +1,44 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+    <jpa:repositories base-package="com.example.organizer.repository" />
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName">
+            <value>com.mysql.jdbc.Driver</value>
+        </property>
+        <property name="url">
+            <value>jdbc:mysql://127.0.0.1:3306/organizer_db</value>
+        </property>
+        <property name="username">
+            <value>root</value>
+        </property>
+        <property name="password">
+            <value>1234</value>
+        </property>
+    </bean>
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+        </property>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.hb2ddl.auto">creat-update</prop>
+            </props>
+        </property>
+        <property name="packagesToScan" value="com.example.organizer.model"></property>
+    </bean>
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+    <context:component-scan base-package="com.example.organizer"/>
+    </beans>

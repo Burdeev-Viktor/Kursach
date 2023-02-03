@@ -35,11 +35,6 @@ public class SystemTrayClass {
             popupMenu.add(exit);
             trayIcon.setPopupMenu(popupMenu);
             tray.add(trayIcon);
-            //trayIcon.displayMessage("Hello, World", "Java Notification Demo", TrayIcon.MessageType.INFO);
-            // Error:
-            // trayIcon.displayMessage("Hello, World", "Java Notification Demo", MessageType.ERROR);
-            // Warning:
-            // trayIcon.displayMessage("Hello, World", "Java Notification Demo", MessageType.WARNING);
         } catch (Exception ex) {
             System.err.print(ex);
         }

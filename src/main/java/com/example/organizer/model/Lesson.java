@@ -1,64 +1,43 @@
 package com.example.organizer.model;
 
+import jakarta.persistence.*;
+import lombok.Data;
+
+
+@Entity
+@Data
+@Table(name = "lessons")
 public class Lesson {
-    private int id;
-    private int idUser;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "id_user")
+    private Long idUser;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "type_of_test")
+    private String typeOfTest;
+    @Column(name = "conditions")
+    private String condition;
 
-    public int getIdUser() {
-        return idUser;
+    public Lesson() {
+
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
-    }
-
-    public Lesson(int id, int idUser, String name, String typeOfTest, String condition) {
+    public Lesson(Long id, Long idUser, String name, String typeOfTest, String condition) {
         this.id = id;
         this.idUser = idUser;
         this.name = name;
         this.typeOfTest = typeOfTest;
         this.condition = condition;
     }
-
-    private String name;
-    private String typeOfTest;
-    private String condition;
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getTypeOfTest() {
-        return typeOfTest;
-    }
-
-    public void setTypeOfTest(String typeOfTest) {
-        this.typeOfTest = typeOfTest;
-    }
-
-    public String getCondition() {
-        return condition;
-    }
-
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
-
     public Lesson(String name, String typeOfTest, String condition) {
         this.name = name;
         this.typeOfTest = typeOfTest;
         this.condition = condition;
     }
-
-    public Lesson(int id, String name, String typeOfTest, String condition) {
+    public Lesson(Long id, String name, String typeOfTest, String condition) {
         this.id = id;
         this.name = name;
         this.typeOfTest = typeOfTest;

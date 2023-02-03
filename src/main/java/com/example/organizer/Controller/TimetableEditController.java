@@ -2,9 +2,9 @@ package com.example.organizer.Controller;
 
 
 import com.example.organizer.CustomView.LessonTimetableSmallView;
-import com.example.organizer.Service.ThisUser;
-import com.example.organizer.Service.TimetableService;
+import com.example.organizer.Services.ThisUser;
 import com.example.organizer.model.LessonTimetable;
+import com.example.organizer.service.TimetableService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
