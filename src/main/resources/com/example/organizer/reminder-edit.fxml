@@ -6,12 +6,12 @@
 
 <AnchorPane prefHeight="530.0" prefWidth="600.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.ReminderEditController">
    <children>
-      <Label layoutX="79.0" layoutY="59.0" styleClass="label_color" text="Предмет:"  AnchorPane.leftAnchor="80.0">
+      <Label layoutX="79.0" layoutY="59.0" styleClass="label_color" text="Предмет:" AnchorPane.leftAnchor="80.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="79.0" layoutY="113.0" styleClass="label_color" text="Задание:"  AnchorPane.leftAnchor="80.0">
+      <Label layoutX="79.0" layoutY="113.0" styleClass="label_color" text="Задание:" AnchorPane.leftAnchor="80.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
@@ -21,44 +21,44 @@
             <Font name="Arial Rounded MT Bold" size="13.0" />
          </font>
       </TextArea>
-      <Button fx:id="butSave" layoutX="274.0" layoutY="453.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="99.0" styleClass="button_general" text="Сохранить" >
+      <Button fx:id="butSave" layoutX="274.0" layoutY="453.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="99.0" styleClass="button_general" text="Сохранить">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="butClose" layoutX="145.0" layoutY="453.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="99.0" styleClass="button_general" text="Отмена" >
+      <Button fx:id="butClose" layoutX="145.0" layoutY="453.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="99.0" styleClass="button_general" text="Отмена">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="butDel" layoutX="398.0" layoutY="453.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="30.0" styleClass="button_general" text="-" >
+      <Button fx:id="butDel" layoutX="398.0" layoutY="453.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="30.0" styleClass="button_general" text="-">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
       <AnchorPane fx:id="paneStandart" layoutX="82.0" layoutY="178.0" prefHeight="249.0" prefWidth="436.0">
          <children>
-            <Label layoutX="2.0" layoutY="71.0" styleClass="label_color" text="Напоминать:"  AnchorPane.leftAnchor="2.0">
+            <Label layoutX="2.0" layoutY="71.0" styleClass="label_color" text="Напоминать:" AnchorPane.leftAnchor="2.0">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="lbSetting" layoutX="2.0" layoutY="124.0" styleClass="label_color" text="Как:"  AnchorPane.leftAnchor="2.0">
+            <Label fx:id="lbSetting" layoutX="2.0" layoutY="124.0" styleClass="label_color" text="Как:" AnchorPane.leftAnchor="2.0">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="lbTime" layoutX="2.0" layoutY="173.0" styleClass="label_color" text="Время:"  AnchorPane.leftAnchor="2.0">
+            <Label fx:id="lbTime" layoutX="2.0" layoutY="173.0" styleClass="label_color" text="Время:" AnchorPane.leftAnchor="2.0">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="2.0" layoutY="12.0" styleClass="label_color" text="Дата сдачи:"  AnchorPane.leftAnchor="2.0">
+            <Label layoutX="2.0" layoutY="12.0" styleClass="label_color" text="Дата сдачи:" AnchorPane.leftAnchor="2.0">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="lbDayOfWeek" layoutX="2.0" layoutY="215.0" styleClass="label_color" text="День недели:"  AnchorPane.leftAnchor="2.0">
+            <Label fx:id="lbDayOfWeek" layoutX="2.0" layoutY="215.0" styleClass="label_color" text="День недели:" AnchorPane.leftAnchor="2.0">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
@@ -68,7 +68,7 @@
             <ChoiceBox fx:id="cbSwitchSetting" layoutX="184.0" layoutY="121.0" prefHeight="25.0" prefWidth="225.0" styleClass="choice-box-my" />
             <ChoiceBox fx:id="cbDayOfWeek" layoutX="184.0" layoutY="214.0" prefHeight="25.0" prefWidth="225.0" styleClass="choice-box-my" />
             <ChoiceBox fx:id="cbHours" layoutX="184.0" layoutY="172.0" prefHeight="25.0" prefWidth="57.0" styleClass="choice-box-my" />
-            <Label fx:id="ldtime1" layoutX="254.0" layoutY="174.0" styleClass="label_color" text=":" >
+            <Label fx:id="ldtime1" layoutX="254.0" layoutY="174.0" styleClass="label_color" text=":">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
@@ -78,17 +78,17 @@
       </AnchorPane>
       <AnchorPane fx:id="paneLab" disable="true" layoutX="68.0" layoutY="187.0" prefHeight="154.0" prefWidth="436.0" visible="false">
          <children>
-            <Label fx:id="lbNeed" layoutX="14.0" layoutY="21.0" text="Всего:" >
+            <Label fx:id="lbNeed" layoutX="14.0" layoutY="21.0" styleClass="label_color" text="Всего:">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="lbClose" layoutX="14.0" layoutY="43.0" text="Сдано:" >
+            <Label fx:id="lbClose" layoutX="14.0" layoutY="43.0" styleClass="label_color" text="Сдано:">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="butLab" layoutX="14.0" layoutY="87.0" mnemonicParsing="false"  text="Сдать" >
+            <Button fx:id="butLab" layoutX="14.0" layoutY="87.0" mnemonicParsing="false" styleClass="button_general" text="Сдать">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>

@@ -1,15 +1,10 @@
 package com.example.organizer.service;
 
 import com.example.organizer.Const;
-import com.example.organizer.Services.ThisUser;
 import com.example.organizer.model.Lesson;
-import com.example.organizer.model.LessonTimetable;
 import com.example.organizer.repository.LessonRepository;
-import com.example.organizer.repository.UserRepository;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 public class LessonService {

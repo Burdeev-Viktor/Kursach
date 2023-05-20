@@ -2,14 +2,16 @@ package com.example.organizer.model;
 
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
 import java.io.Serializable;
 
 
 @Entity
-@Data
+@Setter
+@Getter
 
 @Table(name = "users")
 public class User implements Serializable {
@@ -29,15 +31,6 @@ public class User implements Serializable {
         this.password = password;
     }
     public User(String login, String password, String name) {
-        this.login = login;
-        this.password = password;
-        this.name = name;
-    }
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    public User(Long id, String login, String password, String name) {
-        this.id = id;
         this.login = login;
         this.password = password;
         this.name = name;

@@ -3,7 +3,10 @@ package com.example.organizer.Controller;
 import com.example.organizer.Const;
 
 
-import com.example.organizer.Services.ThisUser;
+import com.example.organizer.model.enums.DayOfWeek;
+import com.example.organizer.model.enums.NumberWeek;
+import com.example.organizer.model.enums.TypeOfLesson;
+import com.example.organizer.repository.Session;
 import com.example.organizer.model.LessonTimetable;
 import com.example.organizer.service.LessonService;
 import com.example.organizer.service.TimetableService;
@@ -67,7 +70,7 @@ public class LessonBuildController implements Initializable {
         cbType.setStyle("-fx-font-size: 18");
         cbType.setValue(Const.DEFAULT_VALUE_CHOICE_BOX);
 
-        array = lessonService.getAllLessonsNameByIdUser(ThisUser.getId());
+        array = lessonService.getAllLessonsNameByIdUser(Session.getId());
         cbName.getItems().addAll(array);
         cbName.setStyle("-fx-font-style: Arial Rounded MT Bold");
         cbName.setStyle("-fx-font-size: 18");
@@ -121,21 +124,8 @@ public class LessonBuildController implements Initializable {
                 alert.show();
                 return;
             }
-            LessonTimetable lessonTimetable = new LessonTimetable(cbName.getValue(), twTeacher.getText(), twRoom.getText(),cbTime.getValue(), cbType.getValue(), -1, -1);
-            switch (cbDayOfWeek.getValue()) {
-                case "Понедельник" -> lessonTimetable.setDayOfWeek(0);
-                case "Вторник" -> lessonTimetable.setDayOfWeek(1);
-                case "Среда" -> lessonTimetable.setDayOfWeek(2);
-                case "Четверг" -> lessonTimetable.setDayOfWeek(3);
-                case "Пятница" -> lessonTimetable.setDayOfWeek(4);
-                case "Суббота" -> lessonTimetable.setDayOfWeek(5);
-            }
-            switch (cbNumberOfWeek.getValue()) {
-                case "Первая" -> lessonTimetable.setNumberOfWeek(0);
-                case "Вторая" -> lessonTimetable.setNumberOfWeek(1);
-                case "Каждую" -> lessonTimetable.setNumberOfWeek(2);
-            }
-            lessonTimetable.setIdUser(ThisUser.getId());
+            LessonTimetable lessonTimetable = new LessonTimetable(cbName.getValue(), twTeacher.getText(), twRoom.getText(),cbTime.getValue(), TypeOfLesson.valueOf(cbType.getValue()), DayOfWeek.valueOf(cbDayOfWeek.getValue()), NumberWeek.valueOf(cbNumberOfWeek.getValue()));
+            lessonTimetable.setIdUser(Session.getId());
             timetableService.save(lessonTimetable);
             SciencesController.toTimeTableEdit(eventTimetable);
             SciencesController.closeThis(event);

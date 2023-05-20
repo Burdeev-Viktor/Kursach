@@ -1,23 +1,23 @@
 package com.example.organizer.SecondTherd;
 
 import com.example.organizer.Const;
-import com.example.organizer.Services.ThisUser;
+import com.example.organizer.model.enums.DayOfWeek;
+import com.example.organizer.model.enums.SettingSwitch;
+import com.example.organizer.repository.Session;
 import com.example.organizer.model.Reminder;
 import com.example.organizer.service.ReminderService;
 import com.example.organizer.service.TimetableService;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class CheckingClass extends Thread {
     private final ReminderService reminderService = new ReminderService();
     private static CheckingClass checkingClass;
     private volatile boolean running;
-    private CheckingClass() {
+    public CheckingClass() {
         running = true;
-    }
-    public static void running() {
-        checkingClass.start();
     }
     public static CheckingClass getCheckingClass() {
         if (checkingClass == null) {
@@ -30,14 +30,15 @@ public class CheckingClass extends Thread {
         running = true;
         while (running) {
             long timeSleep = Const.HOUR_IN_MILLISECONDS;
-            List<Reminder> reminderArrayList = reminderService.findAllRemindersEnableByIdUser(ThisUser.getId());
-            String today = TimetableService.getTodayDayOfWeek();
-            for (int i = 0; i < reminderArrayList.size(); i++) {
-                if (!(Objects.equals(reminderArrayList.get(i).getDayOfWeek(), today) || Objects.equals(reminderArrayList.get(i).getSettingSwitch(), "Каждый день"))) {
-                    reminderArrayList.remove(i);
-                    i--;
-                }
-            }
+            List<Reminder> reminderArrayList = reminderService.findAllRemindersEnableByIdUser(Session.getId());
+            DayOfWeek today = TimetableService.getTodayDayOfWeek();
+            reminderArrayList = reminderArrayList.stream().filter(reminder -> {
+                if(Objects.equals(reminder.getSettingSwitch(), SettingSwitch.EVERYDAY))
+                {
+                    return true;
+                }else return Objects.equals(reminder.getDayOfWeek(), today);
+            }).collect(Collectors.toList());
+
             for (Reminder reminder : reminderArrayList) {
                 long k = ReminderService.getMilSeconds(reminder.getTime());
                 if (k < 0) {

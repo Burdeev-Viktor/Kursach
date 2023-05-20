@@ -8,31 +8,43 @@
     -fx-background-color:  -fx-general-color;
 }
 .button_menu{
-    -fx-background-color: transparent;
+    -fx-background-color: -fx-general-color;
     -fx-text-fill: -fx-second-color ;
     -fx-font-size: 18px;
+    -fx-border-radius: 0;
 }
 .menu_app{
-    -fx-background-color: #363836;
+    -fx-background-color: -fx-general-color;
+}
+.reminder-container{
+    -fx-background-color: #282c2a;
+    -fx-background-radius: 10px;
 }
 .button_menu:hover{
-    -fx-font-size: 20px;
+    -fx-background-color: -fx-second-color;
+    -fx-text-fill: -fx-general-color;
+    -fx-font-size: 18px;
 }
 .button_general{
-    -fx-background-color:   transparent;
+    -fx-background-color:   -fx-general-color;
     -fx-border-color:  -fx-second-color;
     -fx-text-fill: -fx-second-color ;
     -fx-font-family: Arial Rounded MT Bold;
     -fx-font-size: 14px;
-
-
+    -fx-border: none;
+}
+.button-del{
+-fx-background-color: transparent;
+}
+.button-del:hover{
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
 }
 .button_general:hover{
     -fx-border-radius: 5px;
     -fx-scale-x: 1.2;
     -fx-scale-y: 1.2;
     -fx-font-family: Arial Rounded MT ;
-    -fx-font-style: Bold;
     -fx-font-size: 14px;
     -fx-background-color:   -fx-second-color;
     -fx-text-fill: -fx-general-color ;
@@ -83,6 +95,23 @@
     -fx-border-radius: 0;
     -fx-background-radius: 0;
 }
+.text-area-static{
+    -fx-text-fill: -fx-second-color ;
+    -fx-font-family: Arial Rounded MT Bold;
+    -fx-border: none;
+    -fx-background:none ;
+}
+.text-area-static:focused{
+    -fx-background-color: -fx-third-color;
+    -fx-background-radius: 10px;
+    -fx-border: none;
+}
+
+.text-area-static .content{
+    -fx-background-color: -fx-third-color;
+    -fx-background-radius: 10px;
+    -fx-border: none;
+}
 
 .choice-box-my {
     -fx-background-color: -fx-third-color;
@@ -105,7 +134,7 @@
 
 .label_color{
     -fx-text-fill: -fx-second-color ;
-    -fx-font-family: Arial Rounded MT Bold;
+    -fx-font-family: Nitro;
 }
 .label_big{
     -fx-font-size: 18px ;
@@ -117,10 +146,13 @@
     -fx-font-size: 12px;
     -fx-text-fill: -fx-second-color ;
     -fx-font-family: Arial Rounded MT Bold;
+
 }
-.check-box-my.box {
-     -fx-background-color: -fx-third-color;
-     -fx-border-radius: 0;}
+
+.check-box-my .box {
+    -fx-background-color: -fx-third-color;
+     -fx-border-radius: 0;
+}
 
 .check-box-my:selected .mark {
     -fx-background-color: -fx-second-color;
@@ -129,11 +161,25 @@
     -fx-background-color: -fx-third-color;
 }
 .div-day-of-week{
-    -fx-border-color:  transparent transparent -fx-second-color transparent;
+
+}
+.lesson-timetable{
+    -fx-background-radius: 10px;
 }
 .div-box-day-of-week{
-    -fx-border-color:  -fx-second-color;
+
 }
 .line{
     -fx-background-color: -fx-second-color;
+}
+.hBox-lessons{
+    -fx-border-radius: 10px;
+    -fx-border-color:-fx-second-color ;
+    -fx-background-color:-fx-general-color ;
+}
+.scroll-lessons{
+    -fx-background-color:-fx-general-color ;
+}
+.scroll-lessons .virtual-flow > .corner {
+    -fx-background-color:transparent ;
 }

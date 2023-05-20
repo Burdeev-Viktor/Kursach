@@ -1,11 +1,15 @@
 package com.example.organizer.model;
 
+import com.example.organizer.model.enums.DayOfWeek;
+import com.example.organizer.model.enums.SettingSwitch;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
-@Data
+@Setter
+@Getter
 @Table(name = "reminders")
 public class Reminder {
     @Id
@@ -22,29 +26,18 @@ public class Reminder {
     private String date;
     @Column(name = "switch")
     private boolean switchR;
-    @Column(name = "settingSwitch")
-    private String settingSwitch;
+    @Column(name = "setting_switch")
+    @Enumerated(EnumType.STRING)
+    private SettingSwitch settingSwitch;
     @Column(name = "time")
     private String time;
     @Column(name = "need_work")
     private int needWork;
     @Column(name = "close_work")
     private int closeWork;
-    @Column(name = "dayOfWeek")
-    private String dayOfWeek;
-    public Reminder(Long id, Long idUser, String lessonName, String quest, String date, boolean switchR, String settingSwitch, String time, int needWork, int closeWork, String datOfWeek) {
-        this.id = id;
-        this.idUser = idUser;
-        this.lessonName = lessonName;
-        this.quest = quest;
-        this.date = date;
-        this.switchR = switchR;
-        this.settingSwitch = settingSwitch;
-        this.time = time;
-        this.needWork = needWork;
-        this.closeWork = closeWork;
-        this.dayOfWeek = datOfWeek;
-    }
+    @Column(name = "day_of_week")
+    @Enumerated(EnumType.STRING)
+    private DayOfWeek dayOfWeek;
     public Reminder() {}
     public Reminder(String lessonName, String quest, String date, boolean switchR) {
         this.lessonName = lessonName;
@@ -52,7 +45,7 @@ public class Reminder {
         this.date = date;
         this.switchR = switchR;
     }
-    public Reminder(String lessonName, String quest, String date, boolean switchR, String settingSwitch, String time, String datOfWeek) {
+    public Reminder(String lessonName, String quest, String date, boolean switchR, SettingSwitch settingSwitch, String time, DayOfWeek datOfWeek) {
         this.lessonName = lessonName;
         this.quest = quest;
         this.date = date;

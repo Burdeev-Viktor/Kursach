@@ -1,16 +1,12 @@
 package com.example.organizer.Controller;
 
-import com.example.organizer.Const;
-import com.example.organizer.CustomView.LessonTimetableNanoView;
+
 import com.example.organizer.CustomView.ReminderView;
 import com.example.organizer.SecondTherd.CheckingClass;
-import com.example.organizer.Services.ThisUser;
-import com.example.organizer.model.LessonTimetable;
+import com.example.organizer.repository.Session;
 import com.example.organizer.model.Reminder;
 import com.example.organizer.service.ReminderService;
 import com.example.organizer.service.TimetableService;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -18,9 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.List;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -76,7 +70,7 @@ public class MainController implements Initializable {
     @FXML
     private AnchorPane paneLab;
     @FXML
-    private AnchorPane paneStandart;
+    private AnchorPane paneStandard;
     @FXML
     private CheckBox checkBox;
     @FXML
@@ -122,13 +116,9 @@ public class MainController implements Initializable {
             butClose.setDisable(false);
             butClose.fire();
         });
-        cbSwitch.setOnAction(event -> {
-            disOrEnable();
-        });
+        cbSwitch.setOnAction(event -> disOrEnable());
 
-        cbSwitchSetting.setOnAction(event -> {
-            disOrEnableDayOfWeek();
-        });
+        cbSwitchSetting.setOnAction(event -> disOrEnableDayOfWeek());
         butAdd.setOnAction(event -> {
             formationReminder();
             CheckingClass.getCheckingClass().setRunning(false);
@@ -140,76 +130,31 @@ public class MainController implements Initializable {
         setReminders();
     }
     private void setLab() {
-        paneStandart.setVisible(false);
-        paneStandart.setDisable(true);
+        paneStandard.setVisible(false);
+        paneStandard.setDisable(true);
         paneLab.setVisible(true);
         paneLab.setDisable(false);
-        twCountLab.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    twCountLab.setText(newValue.replaceAll("[^\\d]", ""));
-                }
+        twCountLab.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                twCountLab.setText(newValue.replaceAll("[^\\d]", ""));
             }
         });
     }
     private void setStandard() {
-        paneStandart.setVisible(true);
-        paneStandart.setDisable(false);
+        paneStandard.setVisible(true);
+        paneStandard.setDisable(false);
         paneLab.setVisible(false);
         paneLab.setDisable(true);
     }
 
     private void formationReminder() {
-        if (Objects.equals(cbLessonName.getValue(), "")) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(Const.MESSAGE_ERROR_NOT_LESSON_NAME);
-            alert.show();
-            return;
-        }
-        if(!paneLab.isDisable()){
-            Reminder reminder = new Reminder();
-            reminder.setNeedWork(Integer.parseInt(twCountLab.getText()));
-            reminder.setSwitchR(false);
-            reminder.setLessonName(cbLessonName.getValue());
-            reminder.setQuest(taQuest.getText());
-            reminder.setIdUser(ThisUser.getId());
-            reminderService.save(reminder);
-            return;
-        }
-        LocalDate localDate = dpDate.getValue();
-        System.out.println(localDate);
-        if (localDate == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(Const.MESSAGE_ERROR_NOT_DATE);
-            alert.show();
-            return;
-        }
-        if (Objects.equals(cbSwitch.getValue(), Const.CHOICE_BOX_YES) && Objects.equals(cbSwitchSetting.getValue(), Const.CHOICE_BOX_NUMBER_OF_WEEK[2]) && Objects.equals(cbDayOfWeek.getValue(), Const.DEFAULT_VALUE_CHOICE_BOX)) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(Const.MESSAGE_ERROR_NOT_DAY_OF_WEEK);
-            alert.show();
-            return;
-        }
-        Reminder reminder = null;
-        if (Objects.equals(cbSwitch.getValue(), Const.CHOICE_BOX_NO)) {
-            reminder = new Reminder(cbLessonName.getValue(), taQuest.getText(), localDate.toString(), false);
-        } else if (Objects.equals(cbSwitchSetting.getValue(), Const.CHOICE_BOX_NUMBER_OF_WEEK[2])) {
-            reminder = new Reminder(cbLessonName.getValue(), taQuest.getText(), localDate.toString(), true, cbSwitchSetting.getValue(), cbHours.getValue() + Const.COLON + cbMinuts.getValue(), cbDayOfWeek.getValue());
-        } else {
-            reminder = new Reminder(cbLessonName.getValue(), taQuest.getText(), localDate.toString(), true, cbSwitchSetting.getValue(), cbHours.getValue() + Const.COLON + cbMinuts.getValue(), null);
-        }
-        reminder.setIdUser(ThisUser.getId());
-        reminderService.save(reminder);
-        setDataOfNewReminder();
+        boolean flag = reminderService.createNewReminder(cbLessonName, paneLab,
+                twCountLab, taQuest,  dpDate, cbSwitch, cbSwitchSetting, cbDayOfWeek, cbMinuts, cbHours);
+        if(flag) setDataOfNewReminder();
     }
 
     private void setReminders() {
-        List<Reminder> reminderArrayList = null;
-
-        reminderArrayList = reminderService.findAllByIdUser(ThisUser.getId());
-
+        List<Reminder> reminderArrayList= reminderService.findAllByIdUser(Session.getId());
         for (Reminder reminder : reminderArrayList) {
             ReminderView customControl = new ReminderView(reminder);
             vbReminders.getChildren().add(customControl);
@@ -218,24 +163,11 @@ public class MainController implements Initializable {
     }
 
     private void setDataOfNewReminder() {
-        ReminderEditController.setDataOfcb(cbLessonName, taQuest, cbSwitch, cbSwitchSetting, cbHours, cbMinuts, cbDayOfWeek);
-
+        reminderService.defaultDisplayInfo(cbLessonName, taQuest, cbSwitch, cbSwitchSetting, cbHours, cbMinuts, cbDayOfWeek);
     }
 
     private void setWeek() {
-        VBox[] vBoxes = {
-                vb0, vb1, vb2, vb3, vb4, vb5
-        };
-        LessonTimetable[][] lessonTimetableList = timetableService.getSortLessonsTimetableOneWeek(timetableService.getLessonsWeekByNumber(weekCount));
-        for (int d = 0; d < 6 ; d++){
-            if(lessonTimetableList[d] == null){
-                continue;
-            }
-            for (int l = 0;l < lessonTimetableList[d].length; l++){
-                vBoxes[d].getChildren().add(new LessonTimetableNanoView(lessonTimetableList[d][l]));
-                vBoxes[d].setSpacing(2);
-            }
-        }
+        timetableService.displayLessonsOneWeek(new VBox[]{vb0, vb1, vb2, vb3, vb4, vb5},weekCount);
     }
 
     private void disOrEnableDayOfWeek() {
@@ -243,6 +175,6 @@ public class MainController implements Initializable {
     }
 
     private void disOrEnable() {
-        ReminderEditController.disOrEnable(cbSwitch, lbSetting, lbDayOfWeek, ldtime1, lbTime, cbSwitchSetting, cbHours, cbMinuts, cbDayOfWeek);
+        reminderService.disOrEnableLabPane(cbSwitch, lbSetting, lbDayOfWeek, ldtime1, lbTime, cbSwitchSetting, cbHours, cbMinuts, cbDayOfWeek);
     }
 }

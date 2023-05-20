@@ -210,7 +210,7 @@
     </VBox>
     <Button fx:id="butAdd" layoutX="918.0" layoutY="606.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="47.0" styleClass="button_general" text="+" textAlignment="CENTER" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="35.0">
         <font>
-            <Font name="Arial Rounded MT Bold" size="24.0" />
+            <Font name="Arial Rounded MT Bold" size="48.0" />
         </font>
     </Button>
     <Button fx:id="butToMain" layoutX="763.0" layoutY="606.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="110.0" styleClass="button_general" text="Дальше" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="130.0">

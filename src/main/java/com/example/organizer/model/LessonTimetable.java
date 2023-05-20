@@ -1,13 +1,19 @@
 package com.example.organizer.model;
 
+import com.example.organizer.model.enums.DayOfWeek;
+import com.example.organizer.model.enums.NumberWeek;
+import com.example.organizer.model.enums.TypeOfLesson;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
-@Data
+@Setter
+@Getter
 @Table(name = "timetable")
 public class LessonTimetable {
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,19 +29,19 @@ public class LessonTimetable {
     @Column(name = "time")
     private String time;
     @Column(name = "type")
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private TypeOfLesson type;
     @Column(name = "day_of_week")
-    private int dayOfWeek;
+    @Enumerated(EnumType.STRING)
+    private DayOfWeek dayOfWeek;
     @Column(name = "number_of_week")
-    private int numberOfWeek;
+    @Enumerated(EnumType.STRING)
+    private NumberWeek numberOfWeek;
 
-    public LessonTimetable() {
+    public LessonTimetable() {}
 
-    }
 
-    public LessonTimetable(Long id, Long idUser, String name, String teacher, String room, String time, String type, int dayOfWeek, int numberOfWeek) {
-        this.id = id;
-        this.idUser = idUser;
+    public LessonTimetable(String name, String teacher, String room, String time, TypeOfLesson type, DayOfWeek dayOfWeek, NumberWeek numberOfWeek) {
         this.name = name;
         this.teacher = teacher;
         this.room = room;
@@ -45,25 +51,6 @@ public class LessonTimetable {
         this.numberOfWeek = numberOfWeek;
     }
 
-    public LessonTimetable(String name, String teacher, String room, String time, String type, int dayOfWeek, int numberOfWeek) {
-        this.name = name;
-        this.teacher = teacher;
-        this.room = room;
-        this.time = time;
-        this.type = type;
-        this.dayOfWeek = dayOfWeek;
-        this.numberOfWeek = numberOfWeek;
-    }
 
-    public LessonTimetable(Long id, String name, String teacher, String room, String time, String type, int dayOfWeek, int numberOfWeek) {
-        this.id = id;
-        this.name = name;
-        this.teacher = teacher;
-        this.room = room;
-        this.time = time;
-        this.type = type;
-        this.dayOfWeek = dayOfWeek;
-        this.numberOfWeek = numberOfWeek;
-    }
 
 }

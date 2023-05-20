@@ -38,7 +38,6 @@ public class ReminderView extends AnchorPane {
         this.lbName.setText(reminder.getLessonName());
         this.lbDate.setText(reminder.getDate());
         this.taQuest.setText(reminder.getQuest());
-        this.pane.setStyle("-fx-background-color: #c9ac4cff");
     }
 
 }

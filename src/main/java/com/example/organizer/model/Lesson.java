@@ -1,11 +1,14 @@
 package com.example.organizer.model;
 
+import com.example.organizer.model.enums.TypeOfTest;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "lessons")
 public class Lesson {
     @Id
@@ -17,30 +20,22 @@ public class Lesson {
     @Column(name = "name")
     private String name;
     @Column(name = "type_of_test")
-    private String typeOfTest;
+    @Enumerated(EnumType.STRING)
+    private TypeOfTest typeOfTest;
     @Column(name = "conditions")
     private String condition;
 
     public Lesson() {
-
+    }
+    @Enumerated(EnumType.STRING)
+    public TypeOfTest getTypeOfTest() {
+        return typeOfTest;
     }
 
-    public Lesson(Long id, Long idUser, String name, String typeOfTest, String condition) {
-        this.id = id;
-        this.idUser = idUser;
-        this.name = name;
-        this.typeOfTest = typeOfTest;
-        this.condition = condition;
-    }
+
     public Lesson(String name, String typeOfTest, String condition) {
         this.name = name;
-        this.typeOfTest = typeOfTest;
-        this.condition = condition;
-    }
-    public Lesson(Long id, String name, String typeOfTest, String condition) {
-        this.id = id;
-        this.name = name;
-        this.typeOfTest = typeOfTest;
+        this.typeOfTest = TypeOfTest.valueOf(typeOfTest);
         this.condition = condition;
     }
 }

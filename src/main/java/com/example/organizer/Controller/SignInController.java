@@ -1,8 +1,9 @@
 package com.example.organizer.Controller;
 
 import com.example.organizer.Const;
+import com.example.organizer.SecondTherd.CheckingClass;
 import com.example.organizer.SecondTherd.SystemTrayClass;
-import com.example.organizer.Services.ThisUser;
+import com.example.organizer.repository.Session;
 import com.example.organizer.model.User;
 import com.example.organizer.service.UserService;
 import javafx.fxml.FXML;
@@ -44,9 +45,9 @@ public class SignInController implements Initializable {
                 return;
             }
 
-            new ThisUser(userService.findUserByLogin(twLogin.getText()));
-            SystemTrayClass.start();
-            SciencesController.toMain(event, ThisUser.getId());
+            Session.setUser(userService.findUserByLogin(twLogin.getText()));
+            CheckingClass.getCheckingClass().start();
+            SciencesController.toMain(event, Session.getId());
         });
 
     }

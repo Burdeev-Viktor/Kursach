@@ -2,7 +2,7 @@ package com.example.organizer.Controller;
 
 
 import com.example.organizer.CustomView.LessonTimetableSmallView;
-import com.example.organizer.Services.ThisUser;
+import com.example.organizer.repository.Session;
 import com.example.organizer.model.LessonTimetable;
 import com.example.organizer.service.TimetableService;
 import javafx.fxml.FXML;
@@ -48,7 +48,7 @@ public class TimetableEditController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setInfo();
         butAdd.setOnAction(SciencesController::toAddLesson);
-        butToMain.setOnAction(event -> SciencesController.toMain(event, ThisUser.getId()));
+        butToMain.setOnAction(event -> SciencesController.toMain(event, Session.getId()));
     }
     public void setInfo() {
         VBox[][] vBoxes = {

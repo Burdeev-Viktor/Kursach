@@ -2,7 +2,7 @@ package com.example.organizer.Controller;
 
 import com.example.organizer.Const;
 import com.example.organizer.Main;
-import com.example.organizer.Services.ThisUser;
+import com.example.organizer.repository.Session;
 import com.example.organizer.model.LessonTimetable;
 import com.example.organizer.model.Reminder;
 import com.example.organizer.service.LessonService;
@@ -47,7 +47,7 @@ public class SciencesController {
     }
     public static void toMain(ActionEvent event, Long userId) {
 
-        if(lessonService.findAllByIdUser(ThisUser.getId()).size() == 0){
+        if(lessonService.findAllByIdUser(Session.getId()).size() == 0){
             toLessons(event);
             return;
         }

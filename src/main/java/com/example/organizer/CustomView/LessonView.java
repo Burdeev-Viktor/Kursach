@@ -2,6 +2,7 @@ package com.example.organizer.CustomView;
 
 import com.example.organizer.Main;
 import com.example.organizer.model.Lesson;
+import com.example.organizer.model.enums.TypeOfTest;
 import com.example.organizer.service.LessonService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,7 +35,7 @@ public class LessonView extends AnchorPane {
             throw new RuntimeException(exception);
         }
         pane.setOnMouseClicked(mouseEvent -> {
-
+            System.out.println(lesson.getName());
         });
         butDel.setOnAction(event -> {
             lessonService.delete(lesson);
@@ -44,10 +45,10 @@ public class LessonView extends AnchorPane {
         });
         this.lbName.setText(lesson.getName());
         switch (lesson.getTypeOfTest()) {
-            case "Экзамен" -> this.pane.setStyle("-fx-background-color: #c94c4c");
-            case "Зачёт" -> this.pane.setStyle("-fx-background-color: #c9ac4cff");
-            case "Тест" -> this.pane.setStyle("-fx-background-color: #674cc9");
-            case "Неизвестно" -> this.pane.setStyle("-fx-background-color: #4cc5c9ff");
+            case EXAM -> this.pane.setStyle("-fx-background-color: #c94c4c");
+            case CREDIT -> this.pane.setStyle("-fx-background-color: #c9ac4cff");
+            case TEST -> this.pane.setStyle("-fx-background-color: #674cc9");
+            case UNKNOWN -> this.pane.setStyle("-fx-background-color: #4cc5c9ff");
         }
     }
 }

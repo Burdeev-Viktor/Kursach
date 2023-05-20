@@ -33,10 +33,10 @@ public class LessonTimetableNanoView extends AnchorPane {
         this.lbTime.setText(lessonTimetable.getTime());
         this.lbName.setText(lessonTimetable.getName());
         switch (lessonTimetable.getType()) {
-            case "Лекция" -> this.pane.setStyle("-fx-background-color: #87b93c");
-            case "Лабораторная" -> this.pane.setStyle("-fx-background-color: #c9ac4cff");
-            case "Практика" -> this.pane.setStyle("-fx-background-color: #674cc9");
-            case "Консультация" -> this.pane.setStyle("-fx-background-color: #4cc5c9ff");
+            case LECTURE -> this.pane.setStyle("-fx-background-color: #87b93c");
+            case LAB -> this.pane.setStyle("-fx-background-color: #c9ac4cff");
+            case PRACTICE -> this.pane.setStyle("-fx-background-color: #674cc9");
+            case CONSULTATION -> this.pane.setStyle("-fx-background-color: #4cc5c9ff");
         }
     }
 }
