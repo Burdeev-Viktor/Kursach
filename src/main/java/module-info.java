@@ -16,6 +16,7 @@ open module com.example.organizer {
     requires static lombok;
     requires com.dustinredmond.fxtrayicon;
     requires spring.security.crypto;
+    requires spring.tx;
 
 
     exports com.example.organizer;

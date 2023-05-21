@@ -12,4 +12,13 @@ public enum TypeOfTest {
     public String getType() {
         return type;
     }
+    static public TypeOfTest ofString(String type){
+        return switch (type) {
+            case "Экзамен" -> EXAM;
+            case "Зачёт" -> CREDIT;
+            case "Тест" -> TEST;
+            case "Неизвестно" -> UNKNOWN;
+            default -> null;
+        };
+    }
 }

@@ -12,7 +12,7 @@ public interface Const {
     String MESSAGE_ERROR_NOT_DATE = "Введите дату сдачи!";
     String MESSAGE_ERROR_NOT_DAY_OF_WEEK = "Введите день недели когда вам напоминать!";
     String[] CHOICE_BOX_NUMBER_OF_WEEK = {"Первая", "Вторая", "Каждую"};
-    String[] CHOICE_BOX_TYPE_OF_TEST = {"Экзамен", "Зачёт", "Тест","Неизвестно"};
+    String[] CHOICE_BOX_TYPE_OF_TEST = {"Экзамен", "Зачёт", "Тест", "Неизвестно"};
     String[] TIME_OF_START_LESSON_FIRST = {"8:00", "9:55", "11:40","13:25","15:40","17:45"};
     String[] TIME_OF_START_LESSON_SECOND = {"12:00", "13:55", "15:40","17:45"};
     String DEFAULT_VALUE_CHOICE_BOX = "Выбрать";

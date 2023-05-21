@@ -1,14 +1,17 @@
 package com.example.organizer.CustomView;
 
+import com.example.organizer.Controller.SciencesController;
 import com.example.organizer.Main;
 import com.example.organizer.model.Lesson;
 import com.example.organizer.model.enums.TypeOfTest;
 import com.example.organizer.service.LessonService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -36,6 +39,7 @@ public class LessonView extends AnchorPane {
         }
         pane.setOnMouseClicked(mouseEvent -> {
             System.out.println(lesson.getName());
+            SciencesController.toEditLessons(lesson);
         });
         butDel.setOnAction(event -> {
             lessonService.delete(lesson);

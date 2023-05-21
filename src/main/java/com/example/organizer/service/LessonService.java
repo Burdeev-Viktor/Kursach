@@ -3,6 +3,8 @@ package com.example.organizer.service;
 import com.example.organizer.Const;
 import com.example.organizer.model.Lesson;
 import com.example.organizer.repository.LessonRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
@@ -26,7 +28,7 @@ public class LessonService {
         return names;
     }
     public void save(Lesson lesson){
-        lessonsRepository.save(lesson);
+        System.out.println(lessonsRepository.lessonUpdate(lesson.getId(), lesson.getName(),lesson.getCondition(),lesson.getTypeOfTest().name(),lesson.getIdUser()));
     }
     public boolean lessonIsExistsByNameAndIdUser(String name,Long id){
         return lessonsRepository.existsByNameAndIdUser(name,id);

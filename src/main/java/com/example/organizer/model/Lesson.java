@@ -27,6 +27,9 @@ public class Lesson {
 
     public Lesson() {
     }
+
+
+
     @Enumerated(EnumType.STRING)
     public TypeOfTest getTypeOfTest() {
         return typeOfTest;
@@ -35,7 +38,8 @@ public class Lesson {
 
     public Lesson(String name, String typeOfTest, String condition) {
         this.name = name;
-        this.typeOfTest = TypeOfTest.valueOf(typeOfTest);
+        this.typeOfTest = TypeOfTest.ofString(typeOfTest);
         this.condition = condition;
     }
+
 }

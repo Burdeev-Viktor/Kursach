@@ -2,6 +2,7 @@ package com.example.organizer.Controller;
 
 import com.example.organizer.Const;
 import com.example.organizer.Main;
+import com.example.organizer.model.Lesson;
 import com.example.organizer.repository.Session;
 import com.example.organizer.model.LessonTimetable;
 import com.example.organizer.model.Reminder;
@@ -175,6 +176,22 @@ public class SciencesController {
         stage.setTitle(Const.TITLE_EDIT_LESSON);
         stage.show();
     }
+    public static void toEditLessons(Lesson lesson) {
+        Parent root;
+        try {
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("lesson-edit.fxml"));
+            root = loader.load();
+            LessonsEditController lessonsEditController = loader.getController();
+            lessonsEditController.setInfo(lesson);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root, 600, 400));
+        stage.setTitle(Const.TITLE_EDIT_LESSON);
+        stage.show();
+    }
+
 
     public static void toEditReminder(Reminder reminder) {
         Parent root;

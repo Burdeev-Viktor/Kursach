@@ -27,34 +27,34 @@
             </VBox>
          </content>
       </ScrollPane>
-      <Button fx:id="butAdd" layoutX="480.0" layoutY="418.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="127.0" styleClass="button_general" text="Добавить">
+      <Button fx:id="butAdd" layoutX="480.0" layoutY="423.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="127.0" styleClass="button_general" text="Добавить">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="355.0" layoutY="55.0" styleClass="label_color" text="Название:" AnchorPane.leftAnchor="355.0">
+      <Label layoutX="355.0" layoutY="60.0" styleClass="label_color" text="Название:" AnchorPane.leftAnchor="355.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="351.0" layoutY="107.0" styleClass="label_color" text="Тип тестирования:" AnchorPane.leftAnchor="355.0">
+      <Label layoutX="355.0" layoutY="112.0" styleClass="label_color" text="Тип тестирования:" AnchorPane.leftAnchor="355.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="355.0" layoutY="166.0" styleClass="label_color" text="Условия рейтинга студентов:" AnchorPane.leftAnchor="355.0">
+      <Label layoutX="355.0" layoutY="171.0" styleClass="label_color" text="Условия рейтинга студентов:" AnchorPane.leftAnchor="355.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="twName" layoutX="577.0" layoutY="49.0" prefHeight="25.0" prefWidth="252.0" promptText="Высшая математика" styleClass="textField_big">
+      <TextField fx:id="twName" layoutX="577.0" layoutY="54.0" prefHeight="25.0" prefWidth="252.0" promptText="Высшая математика" styleClass="textField_big">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </TextField>
-      <ChoiceBox fx:id="cbType" layoutX="577.0" layoutY="105.0" prefHeight="25.0" prefWidth="252.0" styleClass="choice-box-my" />
-      <TextArea fx:id="taConditions" layoutX="355.0" layoutY="200.0" prefHeight="159.0" prefWidth="465.0" styleClass="text-area-static" />
-      <Button fx:id="butClose" layoutX="667.0" layoutY="418.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="127.0" styleClass="button_general" text="Далее">
+      <ChoiceBox fx:id="cbType" layoutX="577.0" layoutY="110.0" prefHeight="25.0" prefWidth="252.0" styleClass="choice-box-my" />
+      <TextArea fx:id="taConditions" layoutX="355.0" layoutY="205.0" prefHeight="159.0" prefWidth="465.0" styleClass="text-area-static" />
+      <Button fx:id="butClose" layoutX="667.0" layoutY="423.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="127.0" styleClass="button_general" text="Далее">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
