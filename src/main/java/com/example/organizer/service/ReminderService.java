@@ -36,6 +36,9 @@ public class ReminderService {
         CheckingClass.getCheckingClass().setRunning(false);
         CheckingClass.getCheckingClass().start();
     }
+    public List<Reminder> getLabs(){
+        return reminderRepository.getLabs(Session.getId());
+    }
     public List<Reminder> findAllByIdUser(Long id){
         return reminderRepository.findAllByIdUser(id);
     }

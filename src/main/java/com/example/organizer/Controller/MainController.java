@@ -22,6 +22,8 @@ public class MainController implements Initializable {
     private final TimetableService timetableService = new TimetableService();
     private static int weekCount;
     @FXML
+    public Button butStatistic;
+    @FXML
     private Button butLessons;
     @FXML
     private Button butTimetable;
@@ -115,6 +117,9 @@ public class MainController implements Initializable {
             SciencesController.toNewTimeTableEdit();
             butClose.setDisable(false);
             butClose.fire();
+        });
+        butStatistic.setOnAction(event -> {
+            SciencesController.toStatistic();
         });
         cbSwitch.setOnAction(event -> disOrEnable());
 

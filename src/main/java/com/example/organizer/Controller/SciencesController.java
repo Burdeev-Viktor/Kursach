@@ -208,7 +208,19 @@ public class SciencesController {
         stage.setTitle(Const.TITLE_EDIT_REMINDER);
         stage.show();
     }
-
+    public static void toStatistic() {
+        Parent root;
+        try {
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("statistic.fxml"));
+            root = loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root, 600, 530));
+        stage.setTitle("Статистика");
+        stage.show();
+    }
 
 
     public static void updateMainByStage(Stage stage) {
