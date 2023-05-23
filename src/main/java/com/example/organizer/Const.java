@@ -34,7 +34,6 @@ public interface Const {
     String TINE_FORMAT = "hh:mm";
     int LENGTH_OF_PASSWORD = 3;
     int VBOX_SPACING = 5;
-    long HOUR_IN_MILLISECONDS = 3600000;
     long MINUTE_IN_MILLISECONDS = 60000;
 
 }

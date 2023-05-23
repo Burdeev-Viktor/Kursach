@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.StatisticController">
+<AnchorPane styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.StatisticController">
    <children>
-      <HBox fx:id="hBox" layoutX="100.0" layoutY="136.0" prefHeight="250.0" prefWidth="484.0" styleClass="body" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <ScrollPane maxHeight="322.0" maxWidth="600.0" prefHeight="322.0" styleClass="scroll-lessons" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <content>
+          <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" styleClass="body">
+               <children>
+                  <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="349.0" styleClass="body" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox fx:id="hLBox" maxWidth="1.7976931348623157E308" minHeight="316.0" minWidth="595.0" prefHeight="316.0" prefWidth="0.0" styleClass="body" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="33.0" />
+                        <Label layoutX="47.0" layoutY="27.0" styleClass="label_color" text="Здача лабораторных:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="349.0" prefWidth="200.0" styleClass="body" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="349.0">
+                     <children>
+                        <HBox fx:id="hGBox" layoutX="-163.0" layoutY="54.0" minHeight="316.0" minWidth="595.0" prefHeight="316.0" prefWidth="600.0" styleClass="body" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="33.0" />
+                        <Label layoutX="14.0" layoutY="6.0" styleClass="label_color" text="Средняя успеваймость:">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="2.0" />
+                     </padding>
+                  </AnchorPane>
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

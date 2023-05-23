@@ -33,8 +33,6 @@ public class ReminderService {
     }
     public void save(Reminder reminder){
         reminderRepository.save(reminder);
-        CheckingClass.getCheckingClass().setRunning(false);
-        CheckingClass.getCheckingClass().start();
     }
     public List<Reminder> getLabs(){
         return reminderRepository.getLabs(Session.getId());

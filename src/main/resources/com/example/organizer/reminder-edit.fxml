@@ -36,6 +36,31 @@
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
+      <AnchorPane fx:id="paneLab" disable="true" layoutX="68.0" layoutY="187.0" prefHeight="154.0" prefWidth="436.0" visible="false">
+         <children>
+            <Label fx:id="lbNeed" layoutX="14.0" layoutY="21.0" styleClass="label_color" text="Всего:">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbClose" layoutX="14.0" layoutY="43.0" styleClass="label_color" text="Сдано:">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="butLab" layoutX="14.0" layoutY="87.0" mnemonicParsing="false" styleClass="button_general" text="Сдать">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label styleClass="label_color" text="Оценка:" AnchorPane.leftAnchor="153.0" AnchorPane.topAnchor="18.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="cbGrade" prefWidth="58.0" styleClass="choice-box-my" AnchorPane.leftAnchor="228.0" AnchorPane.topAnchor="18.0" />
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="paneStandart" layoutX="82.0" layoutY="178.0" prefHeight="249.0" prefWidth="436.0">
          <children>
             <Label layoutX="2.0" layoutY="71.0" styleClass="label_color" text="Напоминать:" AnchorPane.leftAnchor="2.0">
@@ -74,25 +99,6 @@
                </font>
             </Label>
             <ChoiceBox fx:id="cbMinuts" layoutX="275.0" layoutY="173.0" prefHeight="25.0" prefWidth="57.0" styleClass="choice-box-my" />
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="paneLab" disable="true" layoutX="68.0" layoutY="187.0" prefHeight="154.0" prefWidth="436.0" visible="false">
-         <children>
-            <Label fx:id="lbNeed" layoutX="14.0" layoutY="21.0" styleClass="label_color" text="Всего:">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="lbClose" layoutX="14.0" layoutY="43.0" styleClass="label_color" text="Сдано:">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="18.0" />
-               </font>
-            </Label>
-            <Button fx:id="butLab" layoutX="14.0" layoutY="87.0" mnemonicParsing="false" styleClass="button_general" text="Сдать">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="18.0" />
-               </font>
-            </Button>
          </children>
       </AnchorPane>
       <ChoiceBox fx:id="cbLessonName" layoutX="262.0" layoutY="58.0" prefHeight="25.0" prefWidth="225.0" styleClass="choice-box-my" />

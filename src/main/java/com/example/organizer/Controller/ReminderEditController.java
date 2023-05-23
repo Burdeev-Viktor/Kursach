@@ -1,8 +1,10 @@
 package com.example.organizer.Controller;
 
 import com.example.organizer.Const;
+import com.example.organizer.model.Grade;
 import com.example.organizer.repository.Session;
 import com.example.organizer.model.Reminder;
+import com.example.organizer.service.GradeService;
 import com.example.organizer.service.ReminderService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,12 +13,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 
 public class ReminderEditController implements Initializable {
     private final ReminderService reminderService= new ReminderService();
+    private final GradeService gradeService= new GradeService();
     private static Stage mainStage;
     @FXML
     private Button butSave;
@@ -39,6 +44,8 @@ public class ReminderEditController implements Initializable {
     @FXML
     private ChoiceBox<String> cbHours;
     @FXML
+    private ChoiceBox<Short> cbGrade;
+    @FXML
     private ChoiceBox<String> cbMinuts;
     @FXML
     private ChoiceBox<String> cbDayOfWeek;
@@ -58,6 +65,7 @@ public class ReminderEditController implements Initializable {
     private Label ldtime1;
     @FXML
     private Label lbDayOfWeek;
+    private final List<Grade> gradeList = new ArrayList<>();
     private Reminder reminder;
 
     public static void setEventTimetable(Stage stage) {
@@ -81,6 +89,9 @@ public class ReminderEditController implements Initializable {
         cbSwitchSetting.setOnAction(event -> disOrEnableDayOfWeek());
         butSave.setOnAction(event -> {
             if (formationReminder()) {
+                if((long) gradeList.size() !=0){
+                    gradeList.forEach(gradeService::save);
+                }
                 SciencesController.closeThis(event);
             }
         });
@@ -115,6 +126,8 @@ public class ReminderEditController implements Initializable {
         paneStandart.setDisable(true);
         paneLab.setVisible(true);
         paneLab.setDisable(false);
+        cbGrade.getItems().addAll(new Short[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+        cbGrade.setValue((short)5);
         lbNeed.setText("Всего: " + reminder.getNeedWork());
         lbClose.setText("Сдано: " + reminder.getCloseWork());
         butLab.setOnAction(event -> {
@@ -126,6 +139,7 @@ public class ReminderEditController implements Initializable {
             }
             reminder.setCloseWork(reminder.getCloseWork() + 1);
             lbClose.setText("Сдано: " + reminder.getCloseWork());
+            gradeList.add(new Grade(reminder.getId(),cbGrade.getValue()));
         });
     }
     public void setInfo(Reminder reminder) {

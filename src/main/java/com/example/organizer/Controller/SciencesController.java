@@ -217,7 +217,8 @@ public class SciencesController {
             throw new RuntimeException(e);
         }
         Stage stage = new Stage();
-        stage.setScene(new Scene(root, 600, 530));
+        stage.setScene(new Scene(root, 610, 355));
+        stage.setResizable(false);
         stage.setTitle("Статистика");
         stage.show();
     }

@@ -29,7 +29,7 @@ public class CheckingClass extends Thread {
 
         running = true;
         while (running) {
-            long timeSleep = Const.HOUR_IN_MILLISECONDS;
+            long timeSleep = Const.MINUTE_IN_MILLISECONDS;
             List<Reminder> reminderArrayList = reminderService.findAllRemindersEnableByIdUser(Session.getId());
             DayOfWeek today = TimetableService.getTodayDayOfWeek();
             reminderArrayList = reminderArrayList.stream().filter(reminder -> {

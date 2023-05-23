@@ -1,5 +1,6 @@
 package com.example.organizer.Controller;
 
+import com.example.organizer.CustomView.GtStatisticView;
 import com.example.organizer.CustomView.LtStatisticView;
 import com.example.organizer.model.Reminder;
 import com.example.organizer.service.ReminderService;
@@ -17,10 +18,13 @@ public class StatisticController implements Initializable {
     private final ReminderService reminderService = new ReminderService();
 
     @FXML
-    private HBox hBox;
+    private HBox hLBox;
+    @FXML
+    private HBox hGBox;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         List<Reminder> labs = reminderService.getLabs();
-        hBox.getChildren().addAll(labs.stream().map(LtStatisticView::new).toList());
+        hLBox.getChildren().addAll(labs.stream().map(LtStatisticView::new).toList());
+        hGBox.getChildren().addAll(labs.stream().map(GtStatisticView::new).toList());
     }
 }

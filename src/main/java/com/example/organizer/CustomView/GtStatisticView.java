@@ -1,28 +1,32 @@
 package com.example.organizer.CustomView;
 
 import com.example.organizer.Main;
+import com.example.organizer.model.Grade;
 import com.example.organizer.model.Reminder;
+import com.example.organizer.service.GradeService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.control.Label;
-
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
-public class LtStatisticView extends AnchorPane {
+public class GtStatisticView extends AnchorPane {
+    private static final GradeService gradeService = new GradeService();
     @FXML
     private Label lbName;
     @FXML
-    private Label lbprosent;
+    private Label lbGrade;
     @FXML
     private AnchorPane bScale;
     private float height;
     @FXML
     private Pane dScale;
-    public LtStatisticView(Reminder reminder){
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ltStatistic-view.fxml"));
+    public GtStatisticView(Reminder reminder) {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("gtStatistic-view.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         try {
@@ -30,28 +34,26 @@ public class LtStatisticView extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+        calGrade(reminder);
         this.lbName.setText(reminder.getLessonName());
-        calHeight(reminder);
-        calColor();
     }
-    private void calHeight(Reminder reminder){
-        if(reminder.getCloseWork()==0){
-            dScale.setStyle("-fx-pref-height:0;-fx-background-radius:10");
-            height = 0;
-            lbprosent.setText( "0%");
+    private void calGrade(Reminder reminder){
+        List<Grade> gradeList = gradeService.getGradesByReminder(reminder);
+        if (gradeList.size() == 0){
+            dScale.setStyle("-fx-background-color: #bd2525 ;-fx-background-radius:10");
+            lbGrade.setText("0.0");
             return;
         }
-        height = (float)reminder.getCloseWork() / reminder.getNeedWork() ;
-        System.out.println(reminder.getLessonName() + ((int) (250 * height)));
-        lbprosent.setText((((int)(height * 100)) + "%"));
+        long sum = gradeList.stream().mapToLong(Grade::getGrade).sum();
+        double mean = (double) sum / gradeList.size();
+        lbGrade.setText(String.valueOf(mean));
+        height = (float) (mean / 10);
         dScale.setPrefHeight(((int) (296 * height)));
-    }
-    private void calColor(){
-        if(0 <= height && height <= 0.25){
+        if(0 <= mean && mean <= 2.5){
             dScale.setStyle("-fx-background-color: #bd2525 ;-fx-background-radius:10");
-        }else if(0.25 < height && height <= 0.5){
+        }else if(2.5 < mean && mean <= 5){
             dScale.setStyle("-fx-background-color: #cb8c22 ;-fx-background-radius:10");
-        }else if(0.5 < height && height <= 0.75){
+        }else if(5 < mean && mean <= 7.5){
             dScale.setStyle("-fx-background-color: #cccc15 ;-fx-background-radius:10");
         }else {
             dScale.setStyle("-fx-background-color: #15bd15 ;-fx-background-radius:10");

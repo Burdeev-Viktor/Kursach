@@ -7,16 +7,16 @@
 
 <fx:root depthTest="ENABLE" maxWidth="80.0" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="250.0" prefWidth="80.0" style="-fx-background-color: transparent;" styleClass="lesson-timetable" stylesheets="@style.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
 
-<AnchorPane fx:id="bScale" maxWidth="250.0" prefHeight="250.0" prefWidth="201.0" style="-fx-border-radius: 10px; -fx-background-color: #282c2a; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
-      <Pane fx:id="dScale" layoutX="-1.0" layoutY="200.0" prefHeight="79.0" prefWidth="250.0" style="-fx-background-color: red; -fx-background-radius: 10px; -fx-border-radius: 10px;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <Label fx:id="lbName" layoutX="-64.0" layoutY="125.0" maxWidth="-Infinity" minWidth="200.0" prefHeight="25.0" prefWidth="252.0" rotate="270.0" text="Label" textAlignment="CENTER" textFill="#e8e5e5c2" AnchorPane.leftAnchor="-50.0" AnchorPane.rightAnchor="-50.0">
+<AnchorPane fx:id="bScale" layoutX="20.0" layoutY="9.0" maxWidth="-Infinity" prefHeight="250.0" prefWidth="60.0" style="-fx-border-radius: 10; -fx-background-color: #282c2a; -fx-background-radius: 10;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+      <Pane fx:id="dScale" layoutX="-1.0" layoutY="200.0" prefHeight="0.0" prefWidth="250.0" style="-fx-background-color: red;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Label fx:id="lbName" alignment="CENTER" layoutX="-64.0" layoutY="125.0" maxWidth="-Infinity" minWidth="200.0" prefHeight="25.0" prefWidth="252.0" rotate="270.0" text="Охрана труда" textAlignment="CENTER" textFill="#e8e5e5c2" AnchorPane.bottomAnchor="126.0" AnchorPane.leftAnchor="-100.0" AnchorPane.rightAnchor="-100.0" AnchorPane.topAnchor="126.0">
          <font>
-            <Font name="Bell MT Bold" size="18.0" />
+            <Font name="Stencil" size="36.0" />
          </font>
       </Label>
-      <Label fx:id="lbprosent" layoutX="8.0" layoutY="117.0" text="100%" textFill="WHITE" AnchorPane.bottomAnchor="116.0" AnchorPane.topAnchor="117.0">
+      <Label fx:id="lbprosent" alignment="CENTER" layoutX="8.0" layoutY="117.0" text="100%" textFill="WHITE" AnchorPane.bottomAnchor="116.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="117.0">
          <font>
-            <Font size="18.0" />
+            <Font name="Symbol" size="22.0" />
          </font>
       </Label>
 </AnchorPane>
