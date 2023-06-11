@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.SignInController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.controllers.SignInController">
    <AnchorPane prefHeight="400.0" prefWidth="180.0" styleClass="menu_app" />
    <AnchorPane prefHeight="400.0" prefWidth="526.0" styleClass="body">
       <TextField fx:id="twLogin" layoutX="185.0" layoutY="139.0" prefHeight="26.0" prefWidth="252.0" styleClass="textField_big" AnchorPane.rightAnchor="88.0" />
@@ -13,7 +13,7 @@
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="82.0" layoutY="213.0" styleClass="label_color" text="Пороль:" AnchorPane.leftAnchor="80.0">
+      <Label layoutX="82.0" layoutY="213.0" styleClass="label_color" text="Пароль:" AnchorPane.leftAnchor="80.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font></Label>

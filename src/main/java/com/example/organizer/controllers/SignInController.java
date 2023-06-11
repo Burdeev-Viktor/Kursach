@@ -1,9 +1,8 @@
-package com.example.organizer.Controller;
+package com.example.organizer.controllers;
 
 import com.example.organizer.Const;
-import com.example.organizer.SecondTherd.CheckingClass;
-import com.example.organizer.SecondTherd.SystemTrayClass;
-import com.example.organizer.repository.Session;
+import com.example.organizer.secondTherd.CheckingClass;
+import com.example.organizer.service.Session;
 import com.example.organizer.model.User;
 import com.example.organizer.service.UserService;
 import javafx.fxml.FXML;
@@ -29,7 +28,6 @@ public class SignInController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         butSignUp.setOnAction(SciencesController::toSignUp);
         butSignIn.setOnAction(event -> {
             if (twLogin.getText() == null || twPassword.getText() == null) {
@@ -44,7 +42,6 @@ public class SignInController implements Initializable {
                 alert.show();
                 return;
             }
-
             Session.setUser(userService.findUserByLogin(twLogin.getText()));
             CheckingClass.getCheckingClass().start();
             SciencesController.toMain(event, Session.getId());

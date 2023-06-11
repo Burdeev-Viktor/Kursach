@@ -1,8 +1,8 @@
-package com.example.organizer.Controller;
+package com.example.organizer.controllers;
 
 import com.example.organizer.Const;
 import com.example.organizer.model.Grade;
-import com.example.organizer.repository.Session;
+import com.example.organizer.service.Session;
 import com.example.organizer.model.Reminder;
 import com.example.organizer.service.GradeService;
 import com.example.organizer.service.ReminderService;

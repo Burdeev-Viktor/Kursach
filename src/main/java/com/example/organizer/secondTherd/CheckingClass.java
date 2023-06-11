@@ -1,9 +1,9 @@
-package com.example.organizer.SecondTherd;
+package com.example.organizer.secondTherd;
 
 import com.example.organizer.Const;
 import com.example.organizer.model.enums.DayOfWeek;
 import com.example.organizer.model.enums.SettingSwitch;
-import com.example.organizer.repository.Session;
+import com.example.organizer.service.Session;
 import com.example.organizer.model.Reminder;
 import com.example.organizer.service.ReminderService;
 import com.example.organizer.service.TimetableService;
@@ -26,7 +26,6 @@ public class CheckingClass extends Thread {
         return checkingClass;
     }
     public void run() {
-
         running = true;
         while (running) {
             long timeSleep = Const.MINUTE_IN_MILLISECONDS;

@@ -1,11 +1,11 @@
-package com.example.organizer.Controller;
+package com.example.organizer.controllers;
 
 import com.example.organizer.Const;
 
 import com.example.organizer.model.enums.DayOfWeek;
 import com.example.organizer.model.enums.NumberWeek;
 import com.example.organizer.model.enums.TypeOfLesson;
-import com.example.organizer.repository.Session;
+import com.example.organizer.service.Session;
 import com.example.organizer.model.LessonTimetable;
 import com.example.organizer.service.LessonService;
 import com.example.organizer.service.TimetableService;
@@ -20,8 +20,8 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.example.organizer.Controller.LessonBuildController.errorChecking;
-import static com.example.organizer.Controller.LessonBuildController.settingsChoiceBoxes;
+import static com.example.organizer.controllers.LessonBuildController.errorChecking;
+import static com.example.organizer.controllers.LessonBuildController.settingsChoiceBoxes;
 
 public class LessonEditController implements Initializable {
     private final LessonService lessonService = new LessonService();

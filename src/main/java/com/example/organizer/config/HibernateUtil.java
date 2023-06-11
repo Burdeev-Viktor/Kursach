@@ -1,9 +1,4 @@
-package com.example.organizer.Config;
-
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+package com.example.organizer.config;
 
 
 public class HibernateUtil {
@@ -25,6 +20,7 @@ public class HibernateUtil {
 //            StandardServiceRegistryBuilder.destroy( registry );
 //        }
 //    }
+
 
 
 }

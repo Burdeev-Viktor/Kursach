@@ -3,11 +3,12 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<fx:root depthTest="ENABLE" nodeOrientation="LEFT_TO_RIGHT" prefHeight="20" prefWidth="145.0" style="-fx-border-radius: 10px;" styleClass="lesson-timetable" stylesheets="@style.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root depthTest="ENABLE" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="175.0" style="-fx-border-radius: 10px; -fx-background-color: gray;" styleClass="lesson-timetable" stylesheets="@style.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <AnchorPane fx:id="pane" layoutX="-60.0" layoutY="-92.0" prefHeight="200.0" prefWidth="200.0" styleClass="lesson-timetable" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <Label fx:id="lbTime" prefHeight="25.0" prefWidth="37.0" styleClass="label_color" text="12:00" textOverrun="CLIP">
+      <Label fx:id="lbTime" prefHeight="25.0" prefWidth="37.0" styleClass="label_color" text="12:00" textOverrun="CLIP" AnchorPane.leftAnchor="20.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
@@ -15,7 +16,7 @@
             <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
          </padding>
       </Label>
-      <Label fx:id="lbName" layoutX="35.0" prefHeight="25.0" prefWidth="110.0" styleClass="label_color" text="MMO" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label fx:id="lbName" layoutX="35.0" prefHeight="25.0" prefWidth="110.0" styleClass="label_color" text="MMO" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
@@ -23,5 +24,7 @@
             <Insets left="5.0" />
          </padding>
       </Label>
+      <Circle fx:id="circleLab" fill="#2197ff" layoutX="12.0" layoutY="13.0" opacity="0.0" radius="7.0" stroke="TRANSPARENT" strokeType="INSIDE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="6.0" />
+      <Circle fx:id="circleGrade" fill="#2197ff00" layoutX="155.0" layoutY="13.0" radius="7.0" stroke="TRANSPARENT" strokeType="INSIDE" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="6.0" />
    </AnchorPane>
 </fx:root>

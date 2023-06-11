@@ -36,9 +36,6 @@ public class LessonService {
     public void delete(Lesson lesson){
         lessonsRepository.delete(lesson);
     }
-
-
-
     /**
      * Метод проверяет больше ли время1 или время2
      * @param time1 - время1

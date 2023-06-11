@@ -2,14 +2,14 @@ package com.example.organizer.service;
 
 
 import com.example.organizer.Const;
-import com.example.organizer.SecondTherd.CheckingClass;
+import com.example.organizer.model.LessonTimetable;
 import com.example.organizer.model.Reminder;
 import com.example.organizer.model.enums.SettingSwitch;
 import com.example.organizer.model.enums.DayOfWeek;
 import com.example.organizer.repository.ReminderRepository;
-import com.example.organizer.repository.Session;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.text.ParseException;
@@ -21,6 +21,7 @@ import java.util.*;
 public class ReminderService {
     private static final ReminderRepository reminderRepository;
     private static final LessonService lessonService = new LessonService();
+    private static final GradeService gradeService = new GradeService();
     static {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         reminderRepository = context.getBean(ReminderRepository.class);
@@ -33,6 +34,15 @@ public class ReminderService {
     }
     public void save(Reminder reminder){
         reminderRepository.save(reminder);
+    }
+    public void setIdentifier(LessonTimetable lessonTimetable, Circle circleLab,Circle circleGrade){
+        Reminder reminder = reminderRepository.getLabsByUserAndLesson(lessonTimetable.getIdUser(), lessonTimetable.getName());
+        if(reminder != null){
+            circleLab.setOpacity(1);
+            circleLab.setStyle("-fx-fill:" + calColorLab(reminder));
+            circleGrade.setOpacity(1);
+            circleGrade.setStyle("-fx-fill:" + gradeService.calColor(reminder));
+        }
     }
     public List<Reminder> getLabs(){
         return reminderRepository.getLabs(Session.getId());
@@ -50,6 +60,19 @@ public class ReminderService {
         String mouth = date.substring(5, 7);
         String day = date.substring(8);
         return LocalDate.of(Integer.parseInt(year), Integer.parseInt(mouth), Integer.parseInt(day));
+    }
+    public String calColorLab(Reminder reminder){
+        if(reminder.getCloseWork()==0)return "#bd2525";
+        float height = (float)reminder.getCloseWork() / reminder.getNeedWork() ;
+        if(0 <= height && height <= 0.25){
+            return "#bd2525";
+        }else if(0.25 < height && height <= 0.5){
+            return "#cb8c22";
+        }else if(0.5 < height && height <= 0.75){
+            return "#cccc15";
+        }else {
+            return "#15bd15";
+        }
     }
 
     public static String getHours(String time) {

@@ -21,9 +21,9 @@ open module com.example.organizer {
 
     exports com.example.organizer;
     exports com.example.organizer.model;
-    exports com.example.organizer.CustomView;
+    exports com.example.organizer.customView;
 
-    exports com.example.organizer.Controller;
+    exports com.example.organizer.controllers;
 
 
 

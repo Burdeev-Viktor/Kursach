@@ -1,8 +1,8 @@
-package com.example.organizer.Controller;
+package com.example.organizer.controllers;
 
 import com.example.organizer.Const;
-import com.example.organizer.CustomView.LessonView;
-import com.example.organizer.repository.Session;
+import com.example.organizer.customView.LessonView;
+import com.example.organizer.service.Session;
 import com.example.organizer.model.Lesson;
 import com.example.organizer.model.Reminder;
 import com.example.organizer.service.LessonService;

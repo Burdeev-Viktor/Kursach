@@ -1,6 +1,6 @@
-package com.example.organizer.CustomView;
+package com.example.organizer.customView;
 
-import com.example.organizer.Controller.SciencesController;
+import com.example.organizer.controllers.SciencesController;
 import com.example.organizer.Main;
 import com.example.organizer.model.Reminder;
 import javafx.fxml.FXML;

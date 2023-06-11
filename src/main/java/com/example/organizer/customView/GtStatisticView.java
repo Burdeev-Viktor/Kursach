@@ -1,4 +1,4 @@
-package com.example.organizer.CustomView;
+package com.example.organizer.customView;
 
 import com.example.organizer.Main;
 import com.example.organizer.model.Grade;
@@ -12,7 +12,6 @@ import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Locale;
 
 public class GtStatisticView extends AnchorPane {
     private static final GradeService gradeService = new GradeService();

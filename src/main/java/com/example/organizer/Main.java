@@ -1,15 +1,12 @@
 package com.example.organizer;
 
-import com.example.organizer.SecondTherd.CheckingClass;
-import com.example.organizer.SecondTherd.SystemTrayClass;
-import com.example.organizer.model.enums.SettingSwitch;
+import com.example.organizer.secondTherd.SystemTrayClass;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.stereotype.Component;
 import com.dustinredmond.fxtrayicon.FXTrayIcon;
-import javafx.scene.control.MenuItem;
 
 
 import java.util.Objects;

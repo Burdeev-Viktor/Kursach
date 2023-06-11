@@ -1,4 +1,4 @@
-package com.example.organizer.SecondTherd;
+package com.example.organizer.secondTherd;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 

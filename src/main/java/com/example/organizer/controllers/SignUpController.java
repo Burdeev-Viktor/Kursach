@@ -1,4 +1,4 @@
-package com.example.organizer.Controller;
+package com.example.organizer.controllers;
 
 import com.example.organizer.Const;
 import com.example.organizer.model.User;

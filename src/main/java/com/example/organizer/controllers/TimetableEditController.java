@@ -1,8 +1,8 @@
-package com.example.organizer.Controller;
+package com.example.organizer.controllers;
 
 
-import com.example.organizer.CustomView.LessonTimetableSmallView;
-import com.example.organizer.repository.Session;
+import com.example.organizer.customView.LessonTimetableSmallView;
+import com.example.organizer.service.Session;
 import com.example.organizer.model.LessonTimetable;
 import com.example.organizer.service.TimetableService;
 import javafx.fxml.FXML;

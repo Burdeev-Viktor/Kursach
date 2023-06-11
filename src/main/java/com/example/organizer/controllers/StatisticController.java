@@ -1,7 +1,7 @@
-package com.example.organizer.Controller;
+package com.example.organizer.controllers;
 
-import com.example.organizer.CustomView.GtStatisticView;
-import com.example.organizer.CustomView.LtStatisticView;
+import com.example.organizer.customView.GtStatisticView;
+import com.example.organizer.customView.LtStatisticView;
 import com.example.organizer.model.Reminder;
 import com.example.organizer.service.ReminderService;
 import javafx.fxml.FXML;

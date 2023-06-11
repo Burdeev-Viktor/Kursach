@@ -1,20 +1,9 @@
-package com.example.organizer.SecondTherd;
+package com.example.organizer.secondTherd;
 
 
 import com.dustinredmond.fxtrayicon.FXTrayIcon;
 import com.example.organizer.Const;
-import com.example.organizer.Controller.SciencesController;
-import com.example.organizer.Main;
-import com.example.organizer.repository.Session;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
-import javafx.stage.Stage;
-
-import java.awt.*;
-import java.awt.event.*;
-import java.io.IOException;
-import java.net.URL;
 
 public class SystemTrayClass {
     private static FXTrayIcon trayIcon;

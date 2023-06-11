@@ -1,9 +1,9 @@
-package com.example.organizer.Controller;
+package com.example.organizer.controllers;
 
 
-import com.example.organizer.CustomView.ReminderView;
-import com.example.organizer.SecondTherd.CheckingClass;
-import com.example.organizer.repository.Session;
+import com.example.organizer.customView.ReminderView;
+import com.example.organizer.secondTherd.CheckingClass;
+import com.example.organizer.service.Session;
 import com.example.organizer.model.Reminder;
 import com.example.organizer.service.ReminderService;
 import com.example.organizer.service.TimetableService;

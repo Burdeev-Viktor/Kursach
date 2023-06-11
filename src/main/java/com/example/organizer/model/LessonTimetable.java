@@ -13,7 +13,6 @@ import lombok.Setter;
 @Getter
 @Table(name = "timetable")
 public class LessonTimetable {
-
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,8 +38,6 @@ public class LessonTimetable {
     private NumberWeek numberOfWeek;
 
     public LessonTimetable() {}
-
-
     public LessonTimetable(String name, String teacher, String room, String time, TypeOfLesson type, DayOfWeek dayOfWeek, NumberWeek numberOfWeek) {
         this.name = name;
         this.teacher = teacher;

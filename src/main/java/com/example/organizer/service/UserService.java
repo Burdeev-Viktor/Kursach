@@ -1,10 +1,9 @@
 package com.example.organizer.service;
 
-import com.example.organizer.SecondTherd.Encode;
+import com.example.organizer.secondTherd.Encode;
 import com.example.organizer.model.User;
 import com.example.organizer.repository.UserRepository;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class UserService {

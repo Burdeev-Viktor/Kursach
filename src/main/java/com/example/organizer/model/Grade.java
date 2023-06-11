@@ -17,7 +17,6 @@ public class Grade {
     private Long idReminder;
     @Column(name = "grade")
     private short grade;
-
     public Grade(Long idReminder, short grade) {
         this.idReminder = idReminder;
         this.grade = grade;

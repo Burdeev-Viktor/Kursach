@@ -1,4 +1,4 @@
-package com.example.organizer.repository;
+package com.example.organizer.service;
 
 import com.example.organizer.model.User;
 

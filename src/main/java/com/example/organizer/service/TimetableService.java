@@ -1,13 +1,10 @@
 package com.example.organizer.service;
 
-import com.example.organizer.Const;
-import com.example.organizer.CustomView.LessonTimetableNanoView;
+import com.example.organizer.customView.LessonTimetableNanoView;
 import com.example.organizer.model.enums.DayOfWeek;
 import com.example.organizer.model.enums.NumberWeek;
-import com.example.organizer.repository.Session;
 import com.example.organizer.model.LessonTimetable;
 import com.example.organizer.repository.TimetableRepository;
-import com.example.organizer.repository.UserRepository;
 import javafx.scene.layout.VBox;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

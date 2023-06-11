@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.Controller.StatisticController">
+<AnchorPane styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.organizer.controllers.StatisticController">
    <children>
       <ScrollPane maxHeight="322.0" maxWidth="600.0" prefHeight="322.0" styleClass="scroll-lessons" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <content>
@@ -14,7 +14,7 @@
                   <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="349.0" styleClass="body" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <HBox fx:id="hLBox" maxWidth="1.7976931348623157E308" minHeight="316.0" minWidth="595.0" prefHeight="316.0" prefWidth="0.0" styleClass="body" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="33.0" />
-                        <Label layoutX="47.0" layoutY="27.0" styleClass="label_color" text="Здача лабораторных:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                        <Label layoutX="47.0" layoutY="27.0" styleClass="label_color" text="Сдача лабораторных:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
                            <font>
                               <Font name="Arial Rounded MT Bold" size="18.0" />
                            </font>
